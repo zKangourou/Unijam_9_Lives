@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool isTalking;
 
     public enum Death {
+        chute,
         drogue, medoc,
         tazer, priseElectrique,
         noyadePassive, noyadeActive,
