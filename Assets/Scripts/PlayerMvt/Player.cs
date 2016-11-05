@@ -9,10 +9,11 @@ public class Player : MonoBehaviour
     private int life;
     private GameObject trigger;
     private bool action;
-    private List<Death> death_list = new List<Death>();
+    private List<Death> death_list;
     [HideInInspector]
-    public List<Power> power_list = new List<Power>();
+    public List<Power> power_list;
     public bool isTalking;
+    private SpellBar spellBar;
 
     public enum Death {
         chute,
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        spellBar = this.GetComponent<SpellBar>();
         isTalking = false;
         life = 9;
         death_list.Clear();
@@ -59,6 +61,21 @@ public class Player : MonoBehaviour
                         trigger.GetComponent<Interractable>().Interract();
                     }
                 }
+            }
+        }
+    }
+
+    private void DrawSpellBar()
+    {
+        if (power_list.Count != 0)
+        {
+            for (int i = 0; i < power_list.Count; i++)
+            {
+
+                /*
+            spellBar.spellDictionary.Add(power_list[i], );
+            actualText = textList[i].text;
+            image.sprite = dialogueImages.GetImage(textList[i].image);*/
             }
         }
     }
