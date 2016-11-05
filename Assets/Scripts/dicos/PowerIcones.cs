@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PowerIcones : MonoBehaviour
 {
     Dictionary<Player.Death, Sprite> dico;
+    Dictionary<Player.Power, Sprite> dicoSpell;
     [SerializeField] public Sprite none;
     [SerializeField] public Sprite chute;
     [SerializeField] public Sprite cut_actif;
@@ -39,6 +40,21 @@ public class PowerIcones : MonoBehaviour
         dico.Add(Player.Death.noyadeActive, noyade_actif);
         dico.Add(Player.Death.noyadePassive, noyade_passif);
         dico.Add(Player.Death.pendaison, strangle_passif);
+        dicoSpell = new Dictionary<Player.Power, Sprite>();
+        dicoSpell.Add(Player.Power.immuneChute, chute);
+        dicoSpell.Add(Player.Power.desolidarisation, cut_actif);
+        dicoSpell.Add(Player.Power.hachis, cut_Passif);
+        dicoSpell.Add(Player.Power.passeSousLesPortes, ecrase_actif);
+        dicoSpell.Add(Player.Power.pikatchu, electro_actif);
+        dicoSpell.Add(Player.Power.flamme, fire_actif);
+        dicoSpell.Add(Player.Power.immuneFeu, fire_passif);
+        dicoSpell.Add(Player.Power.figeLesGens, glace_actif);
+        dicoSpell.Add(Player.Power.patinoire, glace_passif);
+        dicoSpell.Add(Player.Power.tireDesBalles, lazer_actif);
+        dicoSpell.Add(Player.Power.immuneBalle, lazer_passif);
+        dicoSpell.Add(Player.Power.canalisation, noyade_actif);
+        dicoSpell.Add(Player.Power.immuneNoyade, noyade_passif);
+        dicoSpell.Add(Player.Power.corde, strangle_passif);
     }
 
 
@@ -47,6 +63,18 @@ public class PowerIcones : MonoBehaviour
         if (dico.ContainsKey(val))
         {
             return dico[val];
+        }
+        else
+        {
+            return none;
+        }
+    }
+
+    public Sprite GetImageSpell(Player.Power val)
+    {
+        if (dicoSpell.ContainsKey(val))
+        {
+            return dicoSpell[val];
         }
         else
         {
