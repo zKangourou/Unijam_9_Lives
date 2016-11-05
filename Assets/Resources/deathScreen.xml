@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeathScreenListPatern xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <DeathScreenPatern>
+      <deathType>barbecue</deathType>
+      <deathDescription>
+        <deathDescription>exemple de déscription de la mort</deathDescription>
+        <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+  </list>
+</DeathScreenListPatern>
