@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 47ff9892e8995a94582bed1e056c0b43
-timeCreated: 1478336704
+timeCreated: 1478377429
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bruitageVoiture: {fileID: 8300000, guid: 9e8a1523c21136c4f9cb791f4b063adc, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

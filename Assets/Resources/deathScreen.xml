@@ -8,5 +8,20 @@
         <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
       </deathDescription>
     </DeathScreenPatern>
+
+    <DeathScreenPatern>
+      <deathType>chute</deathType>
+      <deathDescription>
+        <deathDescription>Vous avez plongé du haut de l’immeuble, mais il n’y avait pas de botte de foin en bas.</deathDescription>
+        <deathPowerDescription>Désormais, Puze est insensible aux dégâts de chute.</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+    <DeathScreenPatern>
+      <deathType>voiture</deathType>
+      <deathDescription>
+        <deathDescription>Une merveilleuse twingo est sortie de l’allée à pleine vitesse, et vous à écrasé. Remarquant qu’elle a écrasé un chat, la voiture recule puis accélère de nouveau pour finir le travail.</deathDescription>
+        <deathPowerDescription>Désormais, Puze peut s’écraser pour devenir aussi fin qu’une crêpe.</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
   </list>
 </DeathScreenListPatern>

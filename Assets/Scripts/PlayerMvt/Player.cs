@@ -4,12 +4,17 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    Vector3 initPos;
+
     private int life;
     private GameObject trigger;
     private bool action;
-    private List<Death> death_list = new List<Death>();
-    private List<Power> power_list = new List<Power>();
+    private List<Death> death_list;
+    [HideInInspector]
+    public List<Power> power_list;
     public bool isTalking;
+    private SpellBar spellBar;
+    private PowerIcones powerIcones;
 
     public enum Death {
         chute,
@@ -35,10 +40,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        spellBar = this.GetComponent<SpellBar>();
         isTalking = false;
         life = 9;
         death_list.Clear();
         power_list.Clear();
+        initPos = transform.position;
     }
 
     void Update()
@@ -55,6 +62,22 @@ public class Player : MonoBehaviour
                         trigger.GetComponent<Interractable>().Interract();
                     }
                 }
+            }
+        }
+    }
+
+    private void DrawSpellBar(Death death)
+    {
+        powerIcones.GetImage(death);
+        if (power_list.Count != 0)
+        {
+            for (int i = 0; i < power_list.Count; i++)
+            {
+
+                /*
+            spellBar.spellDictionary.Add(power_list[i], );
+            actualText = textList[i].text;
+            image.sprite = dialogueImages.GetImage(textList[i].image);*/
             }
         }
     }
@@ -131,5 +154,10 @@ public class Player : MonoBehaviour
     void OnTriggerExit2D(Collider2D coll)
     {
         trigger = null;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = initPos;
     }
 }

@@ -14,5 +14,21 @@
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
+
+
+    <DialoguePatern>
+      <key>mort_par_chute</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>pigeon</image>
+          <text>Chaque mort t’offre une nouvelle compétence ! Désormais, tu es immunisé contre les dégâts de chute. A toi de gérer tes 8 vies restantes convenablement pour sauver les chats de l’extinction.</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
+    <DialoguePatern>
+      <key>mort_par_voiture</key>
+      <elements>
+      </elements>
+    </DialoguePatern>
   </list>
 </DialogueListPatern>

@@ -5,19 +5,20 @@ public class Chute : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    string isImmune_dial = "cat immune";
-    string death_dial = "exemple_de_cle";
+    string death_dial = "mort_par_chute";
 
     public override void Interract()
     {
-        if (player.IsImmune(Player.Death.chute))
-        {
-            txtController.StartDialogue(isImmune_dial,TexteController.DialogueType.NOTHING);
-        }
-        else
+    }
+
+    void OnTriggerEnter2D()
+    {
+        if (!player.IsImmune(Player.Death.chute))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.chute);
+            player.Kill(Player.Death.chute);
+            player.AddPower(Player.Power.immuneChute);
+            SoundManager.PlayBruitage(SoundManager.Bruitages.CHUTE);
         }
-        player.AddPower(Player.Power.immuneChute);
     }
 }
