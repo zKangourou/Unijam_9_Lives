@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 public class PowerIcones : Singleton<PowerIcones>
 {
-    Dictionary<string, Sprite> dico;
+    Dictionary<Player.Death, Sprite> dico;
     [SerializeField]    Sprite none;
 
     void Awake()
     {
-        dico = new Dictionary<string, Sprite>();
+        dico = new Dictionary<Player.Death, Sprite>();
     }
 
 
-    public static Sprite GetImage(string val)
+    public static Sprite GetImage(Player.Death val)
     {
         return Instance.InstanceGetImage(val);
     }
-    Sprite InstanceGetImage(string val)
+    Sprite InstanceGetImage(Player.Death val)
     {
         if (dico.ContainsKey(val))
         {

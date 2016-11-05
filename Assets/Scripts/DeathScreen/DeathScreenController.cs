@@ -16,9 +16,9 @@ public class DeathScreenController : MonoBehaviour
     [SerializeField] private GameObject things;
     [SerializeField] private Text deathExplanation;
     [SerializeField] private Text deathPowerExplanation;
-    [SerializeField] private Text deathPowerTitle;
+    [SerializeField] private GameObject deathPowerTitle;
     [SerializeField] private Image image;
-    [SerializeField] private Player player;
+    private Player player;
     [SerializeField] private GameObject nextText;
     bool next;
 
@@ -38,10 +38,15 @@ public class DeathScreenController : MonoBehaviour
         things.SetActive(false);
         deathExplanation.text = "";
         deathPowerExplanation.text = "";
-        deathPowerTitle.text = "";
+        deathPowerTitle.SetActive(false);
         image.gameObject.SetActive(false);
         nextText.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    public void Cheat()
+    {
+        StartDeath(Player.Death.barbecue);
     }
 
     public void StartDeath(Player.Death deathType)
@@ -54,7 +59,7 @@ public class DeathScreenController : MonoBehaviour
         
         deathExplanation.text = "";
         deathPowerExplanation.text = "";
-        deathPowerTitle.text = "";
+        deathPowerTitle.SetActive(false);
         image.gameObject.SetActive(false);
         nextText.SetActive(false);
 
@@ -90,8 +95,9 @@ public class DeathScreenController : MonoBehaviour
                         yield return new WaitForSeconds(DELTA_TIME);
                     }
             }
-        deathPowerTitle.text = "Vous avez obtenu " + PlayerDeathToString(deathType);
-        //TODO mettre la bonne image
+        deathPowerTitle.SetActive(true);
+        image.sprite = PowerIcones.GetImage(deathType);
+        image.gameObject.SetActive(true);
         deathPowerExplanation.text = actualPatern.deathPowerDescription;
         nextText.SetActive(true);
 
@@ -102,12 +108,6 @@ public class DeathScreenController : MonoBehaviour
                 yield return new WaitForSeconds(SHORT_DELTA_TIME);
             }
         things.SetActive(false);
-        player.DieorNot(deathType, true);
-    }
-
-    string PlayerDeathToString(Player.Death val)
-    {
-        //TODO afficher les types de mort
-        return "";
+        player.Kill(deathType);
     }
 }

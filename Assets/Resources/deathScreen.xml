@@ -2,9 +2,11 @@
 <DeathScreenListPatern xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <list>
     <DeathScreenPatern>
-      <deathType>exemple_de_mort</deathType>
-      <deathDescription>exemple de déscription de la mort</deathDescription>
-      <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
+      <deathType>barbecue</deathType>
+      <deathDescription>
+        <deathDescription>exemple de déscription de la mort</deathDescription>
+        <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
+      </deathDescription>
     </DeathScreenPatern>
   </list>
 </DeathScreenListPatern>
