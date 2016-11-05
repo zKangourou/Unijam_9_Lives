@@ -18,6 +18,7 @@ public class Chute : Interractable
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.chute);
             player.Kill(Player.Death.chute);
             player.AddPower(Player.Power.immuneChute);
+            SoundManager.PlayBruitage(SoundManager.Bruitages.CHUTE);
         }
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
-    public enum Bruitages {LOGO};
+    public enum Bruitages {CHUTE,VOITURE};
     public enum Musique { };
 
     /// <summary>
@@ -37,10 +37,8 @@ public class SoundManager : Singleton<SoundManager>
     //************************
     //********Bruitages*******
     //************************
-    /// <summary>
-    /// Lien vers le bruitage du logo
-    /// </summary>
-    public AudioClip bruitageLogo;
+    [SerializeField] AudioClip bruitageChute;
+    [SerializeField] AudioClip bruitageVoiture;
 
 
     /// <summary>
@@ -119,8 +117,11 @@ public class SoundManager : Singleton<SoundManager>
         originalClip = null;
         switch (name)
         {
-            case Bruitages.LOGO:
-                originalClip = bruitageLogo;
+            case Bruitages.VOITURE:
+                originalClip = bruitageVoiture;
+                break;
+            case Bruitages.CHUTE:
+                originalClip = bruitageChute;
                 break;
         }
         sourceBruitage.PlayOneShot(originalClip);
