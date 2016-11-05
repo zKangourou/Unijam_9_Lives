@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    Vector3 initPos;
+
     private int life;
     private GameObject trigger;
     private bool action;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
         life = 9;
         death_list.Clear();
         power_list.Clear();
+        initPos = transform.position;
     }
 
     void Update()
@@ -131,5 +134,10 @@ public class Player : MonoBehaviour
     void OnTriggerExit2D(Collider2D coll)
     {
         trigger = null;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = initPos;
     }
 }

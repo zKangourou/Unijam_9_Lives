@@ -82,6 +82,7 @@ public class DeathScreenController : MonoBehaviour
     IEnumerator PrintText(Player.Death deathType)
     {
         DeathPatern actualPatern = deathNote[deathType];
+        player.ResetPosition();
         yield return new WaitForSeconds(WAIT_AT_START);
             foreach (char c in actualPatern.deathDescription)
             {
@@ -111,6 +112,5 @@ public class DeathScreenController : MonoBehaviour
             }
         things.SetActive(false);
         player.isTalking = false;
-        player.Kill(deathType);
     }
 }
