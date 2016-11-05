@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Strangulation : MonoBehaviour {
+public class Strangulation : Interractable
+{
+    [SerializeField]
+    TexteController txtController;
+    string death_dial = "exemple_de_cle";
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void Interract()
+    {
+        if (!done)
+        {
+            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.strangulation);
+            player.AddPower(Player.Power.catVador);
+            done = true;
+        }
+    }
 }

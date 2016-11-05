@@ -13,18 +13,28 @@ public class Player : MonoBehaviour
 
     public enum Death {
         chute,
-        drogue, medoc,
-        tazer, priseElectrique,
         noyadePassive, noyadeActive,
+        tazer, priseElectrique,
         strangulation, pendaison,
         barbecue, lanceFlamme,
         voiture, piano,
         tronconneuse, hachoir,
         suicideParBalle, meurtreParBalle,
         lion, mange,
-        givrePassive, givreActive
+        givrePassive, givreActive,
+        drogue, medoc
     }
-    public enum Power { noPower, immuneFeu, immuneBalle, immuneTotal, immuneChute }
+    public enum Power {
+        noPower, immuneChute,
+        canalisation, immuneNoyade,
+        pikatchu, cableElectrique,
+        flamme, immuneFeu,
+        catVador, corde,
+        superman, passeSousLesPortes,
+        desolidarisation, hachis,
+        tireDesBalles, immuneBalle,
+        figeLesGens, patinoire,
+        immuneTotal }
 
     void Start()
     {
@@ -57,6 +67,12 @@ public class Player : MonoBehaviour
         Power power;
         switch (death)
         {
+            case Death.noyadeActive:
+                power = Power.immuneNoyade;
+                break;
+            case Death.noyadePassive:
+                power = Power.immuneNoyade;
+                break;
             case Death.chute:
                 power = Power.immuneChute;
                 break;
