@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TextesDictionary : Singleton<TextesDictionary> {
-    Dictionary<string, string> dialogues;
+    Dictionary<string, List<DialogueElementPatern>> dialogues;
 
-    void Start()
+    void Awake()
     {
-        dialogues = new Dictionary<string, string>();
-        /*DialogueListPatern dialogueListPatern = XmlHelpers.LoadFromTextAsset<DialogueListPatern>(Resources.Load<TextAsset>("dialogues"));
+        dialogues = new Dictionary<string, List<DialogueElementPatern>>();
+        DialogueListPatern dialogueListPatern = XmlHelpers.LoadFromTextAsset<DialogueListPatern>(Resources.Load<TextAsset>("dialogues"));
         foreach (DialoguePatern val in dialogueListPatern.list)
         {
-            dialogues.Add(val.key,val.text);
-        }*/
-        DialogueListPatern tmp = new DialogueListPatern();
-        tmp.list.Add(new DialoguePatern("exemple_de_cle", "exemple de texte"));
-        tmp.list.Add(new DialoguePatern("exemple_de_cle2", "exemple de texte2"));
-        XmlHelpers.SaveToXML<DialogueListPatern>("C:/Users/simon/Desktop/dialogues.xml",tmp);
+            dialogues.Add(val.key,val.elements);
+        }
+        /*DialogueListPatern tmp = new DialogueListPatern();
+        List<DialogueElementPatern> truc = new List<DialogueElementPatern>();
+        truc.Add(new DialogueElementPatern("exemple_d_image", "exemple_de_texte"));
+        truc.Add(new DialogueElementPatern("exemple_d_image2", "exemple_de_texte2"));
+        DialoguePatern machin = new DialoguePatern("exemple_de_cle",truc);
+        tmp.list.Add(machin);
+        XmlHelpers.SaveToXML<DialogueListPatern>("C:/Users/simon/Desktop/dialogues.xml",tmp);*/
     }
 
     /// <summary>
@@ -24,12 +27,12 @@ public class TextesDictionary : Singleton<TextesDictionary> {
     /// </summary>
     /// <param name="val">clé pour la recherche</param>
     /// <returns>texte associé à la clé ou la clé si elle n'est pas dans de dico</returns>
-    public static string GetTexte(string val)
+    public static List<DialogueElementPatern> GetTexte(string val)
     {
         return Instance.InstanceGetText(val);
     }
-    
-    string InstanceGetText(string val)
+
+    List<DialogueElementPatern> InstanceGetText(string val)
     {
         if (dialogues.ContainsKey(val))
         {
@@ -37,7 +40,8 @@ public class TextesDictionary : Singleton<TextesDictionary> {
         }
         else
         {
-            return val;
+            Debug.LogError("La clé "+val+" n'existe pas");
+            return new List<DialogueElementPatern>();
         }
     }
 }

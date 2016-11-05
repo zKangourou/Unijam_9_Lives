@@ -3,11 +3,16 @@
   <list>
     <DialoguePatern>
       <key>exemple_de_cle</key>
-      <text>exemple de texte</text>
-    </DialoguePatern>
-    <DialoguePatern>
-      <key>exemple_de_cle2</key>
-      <text>exemple de texte2</text>
+      <elements>
+        <DialogueElementPatern>
+          <image>exemple_d_image</image>
+          <text>exemple_de_texte</text>
+        </DialogueElementPatern>
+        <DialogueElementPatern>
+          <image>exemple_d_image2</image>
+          <text>exemple_de_texte2</text>
+        </DialogueElementPatern>
+      </elements>
     </DialoguePatern>
   </list>
 </DialogueListPatern>
