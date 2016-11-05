@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     private List<Death> death_list = new List<Death>();
     private List<Power> power_list = new List<Power>();
     public bool isTalking;
-    //private List<Transform> myList = new List<Transform>();
-    //private Dictionary<Deaths, List<Transform>> myDeath;
 
     public enum Death {
         drogue, medoc,
@@ -25,12 +23,14 @@ public class Player : MonoBehaviour
         lion, mange,
         givrePassive, givreActive
     }
-    private enum Power { immuneFeu, immuneBalle, immuneTotal }
+    public enum Power { noPower, immuneFeu, immuneBalle, immuneTotal }
 
     void Start()
     {
         isTalking = false;
         life = 9;
+        death_list.Clear();
+        power_list.Clear();
     }
 
     void Update()
@@ -43,8 +43,6 @@ public class Player : MonoBehaviour
                 if (trigger.GetComponent<Interractable>())
                 {
                     trigger.GetComponent<Interractable>().Interract();
-                    //DieorNot(trigger.mDeath, trigger.isKilling);
-                    //AddPower(trigger.mPower);
                 }
             } 
         }
@@ -52,41 +50,53 @@ public class Player : MonoBehaviour
 
     private bool IsImmune(Death death)
     {
+        Power power;
         switch (death)
         {
-            case Death.medoc:
-                return true;
-            case Death.barbecue:
-                return true;
+            case Death.meurtreParBalle:
+                power = Power.immuneBalle;
+                break;
             case Death.suicideParBalle:
-                return true;
+                power = Power.immuneBalle;
+                break;
+            case Death.barbecue:
+                power = Power.immuneFeu;
+                break;
+            case Death.lanceFlamme:
+                power = Power.immuneFeu;
+                break;
+            case Death.medoc:
+                power = Power.immuneTotal;
+                break;
+            case Death.drogue:
+                power = Power.immuneTotal;
+                break;
             default:
-                return false;
+                power = Power.noPower;
+                break;
         }
+        if (power != Power.noPower && power_list.Contains(power))
+        {
+            return true;
+        }
+        else return false;
     }
 
-    public void DieorNot(Death death, bool kill)
+    public void Kill(Death death)
     {
         if (!IsImmune(death))
         {
-            if (kill && (this.life != 0))
+            if (this.life != 0)
             {
                 Debug.Log("Lose one life");
                 this.life -= 1;
             }
         }
+        else
+            Debug.Log("immune, kill failed");
     }
 
-    public void Die()
-    {
-        if (this.life != 0)
-        {
-            Debug.Log("Lose one life");
-            this.life -= 1;
-        }
-    }
-
-    private void AddPower(Power power)
+    public void AddPower(Power power)
     {
         if (!power_list.Contains(power))
         {
