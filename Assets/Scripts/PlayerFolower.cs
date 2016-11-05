@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerFolower : MonoBehaviour {
 
     [SerializeField] private Vector2 offset;
-    [SerializeField] private Vector3 realOffset;
+    private Vector3 realOffset;
     GameObject player;
 
 	// Use this for initialization
