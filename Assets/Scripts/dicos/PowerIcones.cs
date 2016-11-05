@@ -2,19 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PowerIcones : Singleton<PowerIcones>
+public class PowerIcones : MonoBehaviour
 {
     Dictionary<Player.Death, Sprite> dico;
-    [SerializeField] Sprite none;
-    [SerializeField] Sprite chute;
-    [SerializeField] Sprite ecrase_actif;
-    [SerializeField] Sprite electro_actif;
-    [SerializeField] Sprite electro_passif;
-    [SerializeField] Sprite fire_actif;
-    [SerializeField] Sprite fire_passif;
-    [SerializeField] Sprite noyade_actif;
-    [SerializeField] Sprite noyade_passif;
-    [SerializeField] Sprite strangle_passif;
+    [SerializeField] public Sprite none;
+    [SerializeField] public Sprite chute;
+    [SerializeField] public Sprite ecrase_actif;
+    [SerializeField] public Sprite electro_actif;
+    [SerializeField] public Sprite electro_passif;
+    [SerializeField] public Sprite fire_actif;
+    [SerializeField] public Sprite fire_passif;
+    [SerializeField] public Sprite noyade_actif;
+    [SerializeField] public Sprite noyade_passif;
+    [SerializeField] public Sprite strangle_passif;
 
     void Awake()
     {
@@ -30,11 +30,7 @@ public class PowerIcones : Singleton<PowerIcones>
     }
 
 
-    public static Sprite GetImage(Player.Death val)
-    {
-        return Instance.InstanceGetImage(val);
-    }
-    Sprite InstanceGetImage(Player.Death val)
+    public Sprite GetImage(Player.Death val)
     {
         if (dico.ContainsKey(val))
         {

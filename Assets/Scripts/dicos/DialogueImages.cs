@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DialogueImages : Singleton<DialogueImages> {
+public class DialogueImages : MonoBehaviour {
     Dictionary<string, Sprite> dico;
     [SerializeField] Sprite none;
     [SerializeField] Sprite cat;
@@ -20,11 +20,7 @@ public class DialogueImages : Singleton<DialogueImages> {
     }
 
 
-    public static Sprite GetImage(string val)
-    {
-        return Instance.InstanceGetImage(val);
-    }
-    Sprite InstanceGetImage(string val)
+    public Sprite GetImage(string val)
     {
         if (dico.ContainsKey(val))
         {

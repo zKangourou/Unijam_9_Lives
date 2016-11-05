@@ -17,6 +17,7 @@ public class TexteController : MonoBehaviour {
     [SerializeField] private Image image;
     [SerializeField] private GameObject things;
     [SerializeField] private DeathScreenController death;
+    [SerializeField] private DialogueImages dialogueImages;
     string actualText;
     List<DialogueElementPatern> textList;
     bool skip;
@@ -65,7 +66,7 @@ public class TexteController : MonoBehaviour {
         for (int i = 0;i<textList.Count;i++)
         {
             actualText = textList[i].text;
-            image.sprite = DialogueImages.GetImage(textList[i].image);
+            image.sprite = dialogueImages.GetImage(textList[i].image);
             skip = false;
             text.text = "";
             yield return new WaitForSeconds(WAIT_AT_START);
