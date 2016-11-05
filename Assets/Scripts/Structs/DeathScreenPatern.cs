@@ -2,20 +2,35 @@
 using System.Collections;
 
 public class DeathScreenPatern{
-    public string deathType;
-    public string deathDescription;
-    public string deathPowerDescription;
+    public Player.Death deathType;
+    public DeathPatern deathDescription;
 
     public DeathScreenPatern()
     {
-        deathType = "";
+        deathType = Player.Death.barbecue;
+        deathDescription = new DeathPatern();
+    }
+
+    public DeathScreenPatern(Player.Death deathTypeIn,DeathPatern deathDescriptionIn)
+    {
+        deathType = deathTypeIn;
+        deathDescription = deathDescriptionIn;
+    }
+}
+
+public class DeathPatern
+{
+    public string deathDescription;
+    public string deathPowerDescription;
+
+    public DeathPatern()
+    {
         deathDescription = "";
         deathPowerDescription = "";
     }
 
-    public DeathScreenPatern(string deathTypeIn, string deathDescriptionIn,string deathPowerDescriptionIn)
+    public DeathPatern(string deathDescriptionIn, string deathPowerDescriptionIn)
     {
-        deathType = deathTypeIn;
         deathDescription = deathDescriptionIn;
         deathPowerDescription = deathPowerDescriptionIn;
     }
