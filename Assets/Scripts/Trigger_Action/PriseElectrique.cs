@@ -5,7 +5,8 @@ public class PriseElectrique : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    string death_dial = "exemple_de_cle";
+    string death_dial = "mort_par_prise";
+    string isImmune_dial = "prise_again";
 
     public override void Interract()
     {
@@ -15,5 +16,19 @@ public class PriseElectrique : Interractable
             player.AddPower(Player.Power.cableElectrique);
             done = true;
         }
+        else
+        {
+            txtController.StartDialogue(isImmune_dial, TexteController.DialogueType.NOTHING);
+        }
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
+    }
+
+    void OnTriggerEnter2D()
+    {
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+    }
+    void OnTriggerExit2D()
+    {
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
     }
 }

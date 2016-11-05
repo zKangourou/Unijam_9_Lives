@@ -30,5 +30,23 @@
       <elements>
       </elements>
     </DialoguePatern>
+    <DialoguePatern>
+      <key>mort_par_prise</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>cat</image>
+          <text>*Vous mettez vos doigts dans la prise*</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
+    <DialoguePatern>
+      <key>prise_again</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>cat</image>
+          <text>*Vous mettez vos doigts dans la prise, ça chatouille*</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
   </list>
 </DialogueListPatern>
