@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private GameObject trigger;
     private bool action;
     private List<Death> death_list = new List<Death>();
-    private List<Power> power_list = new List<Power>();
+    public List<Power> power_list = new List<Power>();
     public bool isTalking;
 
     public enum Death {
