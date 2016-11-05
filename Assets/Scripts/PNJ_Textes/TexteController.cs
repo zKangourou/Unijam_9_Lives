@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class TexteController : MonoBehaviour {
     static float SHORT_DELTA_TIME = 0.015f;
@@ -25,7 +26,7 @@ public class TexteController : MonoBehaviour {
         text.text = "";
     }
 
-    public void StartDialogue(string key)
+    public void StartDialogue(string key,Action methode)
     {
         textList = TextesDictionary.GetTexte(key);
         if (textList.Count ==0)
@@ -34,7 +35,7 @@ public class TexteController : MonoBehaviour {
             return;
         }
         things.SetActive(true);
-        StartCoroutine(PrintText());
+        StartCoroutine(PrintText(methode));
     }
 
     void Update()
@@ -52,7 +53,7 @@ public class TexteController : MonoBehaviour {
         }
     }
 
-    IEnumerator PrintText()
+    IEnumerator PrintText(Action methode)
     {
         for (int i = 0;i<textList.Count;i++)
         {
@@ -86,5 +87,6 @@ public class TexteController : MonoBehaviour {
             }
         }
         things.SetActive(false);
+        methode();
     }
 }
