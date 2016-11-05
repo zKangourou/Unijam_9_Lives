@@ -8,5 +8,13 @@
         <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
       </deathDescription>
     </DeathScreenPatern>
+
+    <DeathScreenPatern>
+      <deathType>chute</deathType>
+      <deathDescription>
+        <deathDescription>Vous avez plongé du haut de l’immeuble, mais il n’y avait pas de botte de foin en bas.</deathDescription>
+        <deathPowerDescription>Désormais, vous serez insensibles aux dégâts de chute.</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
   </list>
 </DeathScreenListPatern>

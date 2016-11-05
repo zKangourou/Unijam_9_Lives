@@ -40,7 +40,6 @@ public class TexteController : MonoBehaviour {
         if (textList.Count ==0)
         {
             Debug.Log("Le dialogue n'a pas de composants");
-            return;
         }
         things.SetActive(true);
         StartCoroutine(PrintText(dialogueType, deathType));
