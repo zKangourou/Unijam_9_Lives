@@ -5,11 +5,14 @@ using System.Collections.Generic;
 public class PowerIcones : Singleton<PowerIcones>
 {
     Dictionary<Player.Death, Sprite> dico;
-    [SerializeField]    Sprite none;
+    [SerializeField] Sprite none;
+    [SerializeField] Sprite chute;
+    //[SerializeField] Sprite none;
 
     void Awake()
     {
         dico = new Dictionary<Player.Death, Sprite>();
+        dico.Add(Player.Death.chute, chute);
     }
 
 
