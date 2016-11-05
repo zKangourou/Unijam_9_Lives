@@ -37,7 +37,7 @@ public class PlayerMvt : MonoBehaviour
             jump = Input.GetButton("Jump");
             if (jump && nbSauts == 0)
             {
-                GetComponent<Rigidbody2D>().velocity += goUp;
+                GetComponent<Rigidbody2D>().velocity = goUp;
                 nbSauts += 1;
             }
             this.gameObject.transform.position += (playerMovement + directionY) * speed * Time.deltaTime;
