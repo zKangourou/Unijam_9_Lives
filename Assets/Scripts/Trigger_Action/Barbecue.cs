@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Barbecue : Interractable {
     [SerializeField]
@@ -7,7 +8,7 @@ public class Barbecue : Interractable {
     string isImmune_dial = "cat immune";
     string death_dial = "no immune, cat killed!";
 
-    public void Death_Screen() { Debug.Log("ecran de la mort"); }
+    public void Death_Screen() { Debug.Log("ecran de la mort"); return; }
 
     public override void Interract()
     {
