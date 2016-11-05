@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public List<Power> power_list;
     public bool isTalking;
     private SpellBar spellBar;
+    private PowerIcones powerIcones;
 
     public enum Death {
         chute,
@@ -65,8 +66,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void DrawSpellBar()
+    private void DrawSpellBar(Death death)
     {
+        powerIcones.GetImage(death);
         if (power_list.Count != 0)
         {
             for (int i = 0; i < power_list.Count; i++)
