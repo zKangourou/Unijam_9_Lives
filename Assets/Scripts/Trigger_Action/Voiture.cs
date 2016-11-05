@@ -5,7 +5,7 @@ public class Voiture : Interractable
 {
     [SerializeField] TexteController txtController;
     [SerializeField] SpriteRenderer sprite;
-    string death_dial = "exemple_de_cle";
+    string death_dial = "mort_par_voiture";
 
     public override void Interract()
     {
@@ -15,7 +15,7 @@ public class Voiture : Interractable
     {
         if (!done)
         {
-            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.voiture);
+            player.isTalking = true;
             player.Kill(Player.Death.voiture);
             player.AddPower(Player.Power.superman);
             done = true;
@@ -27,11 +27,18 @@ public class Voiture : Interractable
     {
         transform.localScale = new Vector3(0, 0, 1);
         sprite.color = Color.white;
+        bool sound = true;
         while(transform.localScale.x<0.99f)
         {
             transform.localScale += new Vector3(0.01f, 0.01f, 0);
+            if (sound && transform.localScale.x > 0.0f)
+            {
+                SoundManager.PlayBruitage(SoundManager.Bruitages.VOITURE);
+                sound = false;
+            }
             yield return new WaitForSeconds(0.01f);
         }
         transform.localScale = new Vector3(1, 1, 1);
+        txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.voiture);
     }
 }

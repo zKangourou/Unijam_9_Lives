@@ -25,5 +25,10 @@
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
+    <DialoguePatern>
+      <key>mort_par_voiture</key>
+      <elements>
+      </elements>
+    </DialoguePatern>
   </list>
 </DialogueListPatern>
