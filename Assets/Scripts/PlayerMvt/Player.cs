@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     //private List<Transform> myList = new List<Transform>();
     //private Dictionary<Deaths, List<Transform>> myDeath;
 
-    private enum Death {
+    public enum Death {
         drogue, medoc,
         tazer, priseElectrique,
         noyadePassive, noyadeActive,
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void DieorNot(Death death, bool kill)
+    public void DieorNot(Death death, bool kill)
     {
         if (!IsImmune(death))
         {
@@ -97,14 +97,6 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         trigger = coll.gameObject;
-        Debug.Log("objet collidé " + trigger.tag);
-        /*
-        if (barbecue)
-        {
-            Debug.Log("Le chat brûle et gagne un pouvoir !");
-            LoseOneLife();
-            death_barbecue = true;
-        }*/
     }
 
     void OnTriggerExit2D(Collider2D coll)

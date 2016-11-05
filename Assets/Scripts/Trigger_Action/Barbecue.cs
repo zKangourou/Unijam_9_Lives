@@ -6,6 +6,6 @@ public class Barbecue : Interractable {
     public override void Interract()
     {
         //TODO tester si immune au feu puis tuer le chat en fonction
-        //player.Die();
+        player.DieorNot(Player.Death.barbecue, true);
     }
 }
