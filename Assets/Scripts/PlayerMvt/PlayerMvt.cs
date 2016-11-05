@@ -45,6 +45,10 @@ public class PlayerMvt : MonoBehaviour
             {
                 GetComponent<Rigidbody2D>().velocity = goUp;
                 nbSauts += 1;
+                if(animateur != null)
+                {
+                    animateur.SetBool("Jump", true);
+                }
             }
             this.gameObject.transform.position += (playerMovement + directionY) * speed * Time.deltaTime;
             posY_last_frame = this.gameObject.transform.position.y;
@@ -56,6 +60,10 @@ public class PlayerMvt : MonoBehaviour
         if(val.gameObject.tag == "Ground")
         {
             nbSauts = 0;
+            if (animateur != null)
+            {
+                animateur.SetBool("Jump", false);
+            }
         }
     }
 }
