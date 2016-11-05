@@ -6,18 +6,18 @@ public class Player : MonoBehaviour
 {
     private int life;
     private GameObject trigger;
-    private bool action, death_barbecue;
-    private List<bool> death_list = new List<bool>();
+    private bool action;
+    private List<State> death_list = new List<State>();
     public bool isTalking;
     //private List<Transform> myList = new List<Transform>();
     //private Dictionary<Deaths, List<Transform>> myDeath;
+
+    private enum State { immolationActive, immolationPassive, noyadePassive, noyadeActive, asphyxieActive, asphyxiePassive}
 
     void Start()
     {
         isTalking = false;
         life = 9;
-        death_barbecue = false;
-        death_list.Add(death_barbecue);
     }
 
     void Update()
