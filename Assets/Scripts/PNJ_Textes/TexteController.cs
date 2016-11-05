@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System;
 
 public class TexteController : MonoBehaviour {
+    public enum DialogueType {NOTHING,DIE,GIRL,BOSS}
+
     static float SHORT_DELTA_TIME = 0.015f;
     static float DELTA_TIME = 0.1f;
     static float LONG_DELTA_TIME = 0.5f;
@@ -14,20 +16,25 @@ public class TexteController : MonoBehaviour {
     [SerializeField] private Text text;
     [SerializeField] private Image image;
     [SerializeField] private GameObject things;
+    [SerializeField] private DeathScreenController death;
     string actualText;
     List<DialogueElementPatern> textList;
     bool skip;
     bool next;
+
+    Player player;
 
     // Use this for initialization
     void Awake () {
         skip = false;
         next = false;
         text.text = "";
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    public void StartDialogue(string key,Action methode)
+    public void StartDialogue(string key, DialogueType dialogueType, Player.Death deathType = Player.Death.barbecue)
     {
+        player.isTalking = true;
         textList = TextesDictionary.GetTexte(key);
         if (textList.Count ==0)
         {
@@ -35,7 +42,7 @@ public class TexteController : MonoBehaviour {
             return;
         }
         things.SetActive(true);
-        StartCoroutine(PrintText(methode));
+        StartCoroutine(PrintText(dialogueType, deathType));
     }
 
     void Update()
@@ -53,7 +60,7 @@ public class TexteController : MonoBehaviour {
         }
     }
 
-    IEnumerator PrintText(Action methode)
+    IEnumerator PrintText(DialogueType dialogueType, Player.Death deathType)
     {
         for (int i = 0;i<textList.Count;i++)
         {
@@ -87,6 +94,16 @@ public class TexteController : MonoBehaviour {
             }
         }
         things.SetActive(false);
-        methode();
+
+        switch (dialogueType)
+        {
+            case DialogueType.DIE:
+                death.StartDeath(deathType);
+                break;
+            case DialogueType.NOTHING:
+            default:
+                player.isTalking = false;
+                break;
+        }
     }
 }

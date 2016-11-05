@@ -108,6 +108,7 @@ public class DeathScreenController : MonoBehaviour
                 yield return new WaitForSeconds(SHORT_DELTA_TIME);
             }
         things.SetActive(false);
+        player.isTalking = false;
         player.Kill(deathType);
     }
 }

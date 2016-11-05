@@ -8,17 +8,15 @@ public class Barbecue : Interractable {
     string isImmune_dial = "cat immune";
     string death_dial = "no immune, cat killed!";
 
-    public void Death_Screen() { Debug.Log("ecran de la mort"); return; }
-
     public override void Interract()
     {
         if (player.IsImmune(Player.Death.barbecue))
         {
-            txtController.StartDialogue(isImmune_dial, null);
+            txtController.StartDialogue(isImmune_dial,TexteController.DialogueType.DIE,Player.Death.barbecue);
         }
         else
         {
-            txtController.StartDialogue(death_dial, Death_Screen);
+            txtController.StartDialogue(death_dial, TexteController.DialogueType.NOTHING);
         }
         //player.Kill(Player.Death.barbecue);
         player.AddPower(Player.Power.immuneFeu);
