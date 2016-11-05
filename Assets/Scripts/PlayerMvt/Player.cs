@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     private GameObject trigger;
     private bool action, death_barbecue;
     private List<bool> death_list = new List<bool>();
+    public bool isTalking;
     //private List<Transform> myList = new List<Transform>();
     //private Dictionary<Deaths, List<Transform>> myDeath;
 
     void Start()
     {
+        isTalking = false;
         life = 9;
         death_barbecue = false;
         death_list.Add(death_barbecue);
@@ -21,6 +23,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         action = Input.GetButtonDown("Action");
+        if (action)
+        {
+            if (trigger != null)
+            {
+                if (trigger.GetComponent<Interractable>())
+                {
+                    trigger.GetComponent<Interractable>().Interract();
+                }
+            } 
+        }
     }
 
     private void LoseOneLife()
@@ -37,6 +49,10 @@ public class Player : MonoBehaviour
         LoseOneLife();
     }
 
+    private void ActionPower()
+    {
+    }
+
     void OnTriggerEnter2D(Collider2D coll)
     {
         trigger = coll.gameObject;
@@ -50,5 +66,8 @@ public class Player : MonoBehaviour
         }*/
     }
 
-
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        trigger = null;
+    }
 }
