@@ -20,9 +20,7 @@ public class Player : MonoBehaviour
         voiture, piano,
         tronconneuse, hachoir,
         suicideParBalle, meurtreParBalle,
-        lion, mange,
-        givrePassive, givreActive,
-        drogue, medoc
+        givrePassive, givreActive
     }
     public enum Power {
         noPower, immuneChute,
@@ -33,8 +31,7 @@ public class Player : MonoBehaviour
         superman, passeSousLesPortes,
         desolidarisation, hachis,
         tireDesBalles, immuneBalle,
-        figeLesGens, patinoire,
-        immuneTotal }
+        figeLesGens, patinoire }
 
     void Start()
     {
@@ -87,12 +84,6 @@ public class Player : MonoBehaviour
                 break;
             case Death.lanceFlamme:
                 power = Power.immuneFeu;
-                break;
-            case Death.medoc:
-                power = Power.immuneTotal;
-                break;
-            case Death.drogue:
-                power = Power.immuneTotal;
                 break;
             default:
                 power = Power.noPower;
