@@ -1,17 +1,23 @@
 fileFormatVersion: 2
 guid: 72b0be68d010f3d4799791b01062466f
-timeCreated: 1478361137
+timeCreated: 1478363258
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - none: {fileID: 21300000, guid: 37b1b168d2191654b9bf9f4dfed39bdc, type: 3}
   - chute: {fileID: 21300000, guid: 66970923b7bd7b845a85968730a60e69, type: 3}
+  - cut_actif: {fileID: 21300000, guid: 46439588043766642bca7933437d75e8, type: 3}
+  - cut_Passif: {fileID: 21300000, guid: fc89c047592097d4183730e8d76b7244, type: 3}
   - ecrase_actif: {fileID: 21300000, guid: cab543315e5b52e4086a21451830df25, type: 3}
   - electro_actif: {fileID: 21300000, guid: d33e19a0953551842b4c68ddfd3bcc99, type: 3}
   - electro_passif: {fileID: 21300000, guid: 91ff20c33b3454f42b5143c562634dc3, type: 3}
   - fire_actif: {fileID: 21300000, guid: b859cfc0a2ee56145b025d9caad5e96b, type: 3}
   - fire_passif: {fileID: 21300000, guid: 877523395f7c5cc4ca414d9ea64eb276, type: 3}
+  - glace_actif: {fileID: 21300000, guid: c5ee5b6e15061c14193edf492a98dd01, type: 3}
+  - glace_passif: {fileID: 21300000, guid: 923452083e378b746ba6fafc2c119cd7, type: 3}
+  - lazer_actif: {fileID: 21300000, guid: 642c64ad1605f7b4b800acf1080a54d3, type: 3}
+  - lazer_passif: {fileID: 21300000, guid: 6ad56495833096546b4a7380fa0a1217, type: 3}
   - noyade_actif: {fileID: 21300000, guid: f391932e0665dd9449a33698f2de16ba, type: 3}
   - noyade_passif: {fileID: 21300000, guid: 06be8c3d7e3eda94a98333e2c90fa6e1, type: 3}
   - strangle_passif: {fileID: 21300000, guid: 6d5d3a10ccc41b140a1231e4aa48b8e6, type: 3}
