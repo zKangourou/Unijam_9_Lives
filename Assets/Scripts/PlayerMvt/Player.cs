@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        spellBar = this.GetComponent<SpellBar>();
+        //spellBar = this.GetComponent<SpellBar>();
         isTalking = false;
         life = 9;
         death_list.Clear();
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < power_list.Count; i++)
         {
-            spellBar.DrawSpellBar(power_list[i]);
+            //spellBar.DrawSpellBar(power_list[i]);
         }
         if (!isTalking)
         {

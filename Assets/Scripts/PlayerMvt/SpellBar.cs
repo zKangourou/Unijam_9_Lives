@@ -22,7 +22,7 @@ public class SpellBar : MonoBehaviour {
     private Image spell7;
     [SerializeField]
     private Image spell8;
-    public Dictionary<string, Image> spellDictionary;
+    public Dictionary<string, Image> spellDictionary = new Dictionary<string, Image>();
     Player player;
     private PowerIcones powerIcones;
     private int inc;
