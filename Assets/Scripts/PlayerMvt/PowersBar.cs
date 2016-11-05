@@ -6,16 +6,17 @@ using System.Collections.Generic;
 public class PowersBar : MonoBehaviour {
     [SerializeField]
     private Sprite blank;
-    Dictionary<string, List<Sprite>> powerDictionary;
+    Dictionary<string, List<Image>> spellDictionary;
     Player player;
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
     }
 
     void Start () {
-	
+	    
 	}
     
     void Update()
