@@ -35,16 +35,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        action = Input.GetButtonDown("Action");
-        if (action)
+        if (!isTalking)
         {
-            if (trigger != null)
+            action = Input.GetButtonDown("Action");
+            if (action)
             {
-                if (trigger.GetComponent<Interractable>())
+                if (trigger != null)
                 {
-                    trigger.GetComponent<Interractable>().Interract();
+                    if (trigger.GetComponent<Interractable>())
+                    {
+                        trigger.GetComponent<Interractable>().Interract();
+                    }
                 }
-            } 
+            }
         }
     }
 
