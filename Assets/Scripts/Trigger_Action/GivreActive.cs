@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GivreActive : MonoBehaviour {
+public class GivreActive : Interractable
+{
+    [SerializeField]
+    TexteController txtController;
+    string death_dial = "exemple_de_cle";
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void Interract()
+    {
+        if (!done)
+        {
+            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.givreActive);
+            player.AddPower(Player.Power.figeLesGens);
+            done = true;
+        }
+    }
 }
