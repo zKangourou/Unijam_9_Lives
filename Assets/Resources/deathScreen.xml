@@ -1,26 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DeathScreenListPatern xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <list>
-    <DeathScreenPatern>
-      <deathType>barbecue</deathType>
-      <deathDescription>
-        <deathDescription>exemple de déscription de la mort</deathDescription>
-        <deathPowerDescription>exemple de description du pouvoir lié à la mort</deathPowerDescription>
-      </deathDescription>
-    </DeathScreenPatern>
-
+  
     <DeathScreenPatern>
       <deathType>chute</deathType>
       <deathDescription>
         <deathDescription>Vous avez plongé du haut de l’immeuble, mais il n’y avait pas de botte de foin en bas.</deathDescription>
-        <deathPowerDescription>Désormais, Puze est insensible aux dégâts de chute.</deathPowerDescription>
+        <deathPowerDescription>Désormais, Puze est insensible aux dégâts de chute</deathPowerDescription>
       </deathDescription>
     </DeathScreenPatern>
+	
     <DeathScreenPatern>
       <deathType>voiture</deathType>
       <deathDescription>
         <deathDescription>Une merveilleuse twingo est sortie de l’allée à pleine vitesse, et vous à écrasé. Remarquant qu’elle a écrasé un chat, la voiture recule puis accélère de nouveau pour finir le travail.</deathDescription>
-        <deathPowerDescription>Désormais, Puze peut s’écraser pour devenir aussi fin qu’une crêpe.</deathPowerDescription>
+        <deathPowerDescription>Désormais, Puze peut s’écraser pour devenir aussi fin qu’une crêpe</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>tazer</deathType>
+      <deathDescription>
+        <deathDescription>Bob voit Puze entrer dans la pièce. Puze se fige sur place, il regarde Bob, c’est un vrai coup de foudre. Quand Puze s'évanouit, Bob range son taser. </deathDescription>
+        <deathPowerDescription>Puze peut désormais électrocuter les alentours</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>priseElectrique</deathType>
+      <deathDescription>
+        <deathDescription>Puze voit de petites étincelles sortir de la prise proche. Attiré par son instinct naturel Puze se jette à la poursuite des étincelles et pose ses deux pattes sur les connecteurs de la prise… on peut dire que le courant est bien passé.</deathDescription>
+        <deathPowerDescription>Puze peut désormais utiliser les câbles comme moyen de transport</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>noyadePassive</deathType>
+      <deathDescription>
+        <deathDescription>Puze regarde la surface de l’eau avant de se jeter dedans. Il ne remonte pas à la surface...</deathDescription>
+        <deathPowerDescription>	Puze peut désormais respirer sous l’eau</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>noyadeActive</deathType>
+      <deathDescription>
+        <deathDescription>Puze entra dans la pièce. C’est l’appartement d’une personne âgée, elle a l’air de vivre seule. Puze miaule pour interpeller la vieille dame. Elle le regarde, l’attrape, le caresse, Puze ronronne quand soudain elle le plonge dans la baignoire…</deathDescription>
+        <deathPowerDescription>Puze peut désormais se liquéfier pour passer dans les canalisation</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>strangulation</deathType>
+      <deathDescription>
+        <deathDescription>Malheureusement, Bob empoigne le chat et commence à l’étrangler. Il aurait bien besoin d’un coup de main !</deathDescription>
+        <deathPowerDescription>Puze peut désormais étrangler les gens à distance</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>pendaison</deathType>
+      <deathDescription>
+        <deathDescription>Le chat accroche la corde, fait un petit noeud marin et se suspend au plafond.</deathDescription>
+        <deathPowerDescription>Puze peut désormais utiliser la corde pour s’accrocher</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>barbecue</deathType>
+      <deathDescription>
+        <deathDescription>Le chat regarde coi le barbecue, Soudainement, il se jette dedans sans hésitation. Ses poils commencent alors à s'enflammer et la vie quitte Puze petit à petit dans des miaulements de douleur.</deathDescription>
+        <deathPowerDescription>Puze ne craint plus ni la chaleur ni les flammes</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>lanceFlamme</deathType>
+      <deathDescription>
+        <deathDescription>Bob voit entrer Puze dans la pièce. L’homme regarde le chat avec des yeux complaisants et pleins de malice, la chaleur de la pièce est agréable, le chat s'endort sans douleur… Bob éteignit alors le lance flamme.</deathDescription>
+        <deathPowerDescription>Puze peut désormais faire fondre les surfaces glacées</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>tronconneuse</deathType>
+      <deathDescription>
+        <deathDescription>Pourchassé par Bob, Puze n’arrive pas à s’échapper. Il finit découpé en 2, les pattes arrières séparées du reste de son corps.</deathDescription>
+        <deathPowerDescription>Désormais, le chat peut séparer librement son corps en deux</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>hachoir</deathType>
+      <deathDescription>
+        <deathDescription>Puze saute dans la machine à hachis, pendant que Mihet active la manivelle. Enfin du travail d’équipe efficace !</deathDescription>
+        <deathPowerDescription>Désormais, le chat peut se diviser en plusieurs parties pour passer dans des obstacles fins</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>suicideParBalle</deathType>
+      <deathDescription>
+        <deathDescription>Puze ramasse le pistolet laser, et tente de se tuer avec. Ses coussinets l’empêchent d’appuyer sur la détente. Mihet finit par arriver à la rescousse du pauvre chat, et l’aide à se suicider.</deathDescription>
+        <deathPowerDescription>Puze ne craint plus ni les balles, ni les lasers</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>meurtreParBalle</deathType>
+      <deathDescription>
+        <deathDescription>Un joyeux luron sort en titubant de l’allée, brandissant un pistolet laser dans une main, et une bouteille de whisky bon marché dans l’autre. Après avoir raté ses 3 premiers tirs, il finit par toucher Puze entre les deux yeux.</deathDescription>
+        <deathPowerDescription>Puze désormais tirer des lasers avec ses yeux</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>givrePassive</deathType>
+      <deathDescription>
+        <deathDescription>N’ayant pas froid aux yeux, le chat plante ses griffes dans la bouteille d’azote. Le gaz qui en sort transforme Puze en une splendide statue de glace.</deathDescription>
+        <deathPowerDescription>Le chat peut désormais créer des flaques de glace pour glisser</deathPowerDescription>
+      </deathDescription>
+    </DeathScreenPatern>
+	
+	<DeathScreenPatern>
+      <deathType>givreActive</deathType>
+      <deathDescription>
+        <deathDescription>Puze se fait empoigner, et sans prévenir, il se retrouve enfermé dans un congélateur. Heureusement qu’il ne manque pas de sang-froid !</deathDescription>
+        <deathPowerDescription>Puze est désormais capable de congeler ses ennemis</deathPowerDescription>
       </deathDescription>
     </DeathScreenPatern>
   </list>
