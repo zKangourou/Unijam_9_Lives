@@ -20,6 +20,8 @@ public class DeathScreenController : MonoBehaviour
     [SerializeField] private Image image;
     private Player player;
     [SerializeField] private GameObject nextText;
+    [SerializeField] private PowerIcones powerIcone;
+
     bool next;
 
 
@@ -96,7 +98,7 @@ public class DeathScreenController : MonoBehaviour
                     }
             }
         deathPowerTitle.SetActive(true);
-        image.sprite = PowerIcones.GetImage(deathType);
+        image.sprite = powerIcone.GetImage(deathType);
         image.gameObject.SetActive(true);
         deathPowerExplanation.text = actualPatern.deathPowerDescription;
         nextText.SetActive(true);
