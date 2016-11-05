@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SuicideParBalle : MonoBehaviour {
+public class SuicideParBalle : Interractable
+{
+    [SerializeField]
+    TexteController txtController;
+    string isImmune_dial = "cat immune";
+    string death_dial = "exemple_de_cle";
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void Interract()
+    {
+        if (player.IsImmune(Player.Death.suicideParBalle))
+        {
+            txtController.StartDialogue(isImmune_dial, TexteController.DialogueType.NOTHING);
+        }
+        else
+        {
+            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.suicideParBalle);
+        }
+        player.AddPower(Player.Power.immuneBalle);
+    }
 }

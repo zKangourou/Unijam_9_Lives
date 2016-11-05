@@ -10,13 +10,13 @@ public class LanceFlamme : Interractable
 
     public override void Interract()
     {
-        if (player.IsImmune(Player.Death.barbecue))
+        if (player.IsImmune(Player.Death.lanceFlamme))
         {
             txtController.StartDialogue(isImmune_dial, TexteController.DialogueType.NOTHING);
         }
         else
         {
-            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.barbecue);
+            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.lanceFlamme);
         }
         player.AddPower(Player.Power.immuneFeu);
     }
