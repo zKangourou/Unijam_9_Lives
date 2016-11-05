@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Barbecue : MonoBehaviour {
+public class Barbecue : Interractable {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void Interract()
+    {
+        Player.Die();
+    }
 }
