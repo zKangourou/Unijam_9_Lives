@@ -3,10 +3,11 @@ using System.Collections;
 
 public class Interractable : MonoBehaviour {
     protected Player player;
-    protected 
+    public bool done;
 
     void Start()
     {
+        done = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
