@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class Barbecue : Interractable {
     [SerializeField]
@@ -18,7 +17,6 @@ public class Barbecue : Interractable {
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.barbecue);
         }
-        //player.Kill(Player.Death.barbecue);
         player.AddPower(Player.Power.immuneFeu);
     }
 }
