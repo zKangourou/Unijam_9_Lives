@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private bool IsImmune(Death death)
+    public bool IsImmune(Death death)
     {
         Power power;
         switch (death)
@@ -77,9 +77,14 @@ public class Player : MonoBehaviour
         }
         if (power != Power.noPower && power_list.Contains(power))
         {
+            Debug.Log(power + ": immune to " + death + ", kill failed");
             return true;
         }
-        else return false;
+        else
+        {
+            Debug.Log("no immune to " + death + ", kill autorized");
+            return false;
+        }
     }
 
     public void Kill(Death death)
