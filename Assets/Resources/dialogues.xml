@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DialogueListPatern xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <DialoguePatern>
+      <key>exemple_de_cle</key>
+      <text>exemple de texte</text>
+    </DialoguePatern>
+    <DialoguePatern>
+      <key>exemple_de_cle2</key>
+      <text>exemple de texte2</text>
+    </DialoguePatern>
+  </list>
+</DialogueListPatern>
