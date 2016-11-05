@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         lion, mange,
         givrePassive, givreActive
     }
-    public enum Power { noPower, immuneFeu, immuneBalle, immuneTotal }
+    public enum Power { noPower, immuneFeu, immuneBalle, immuneTotal, immuneChute }
 
     void Start()
     {
@@ -57,6 +57,9 @@ public class Player : MonoBehaviour
         Power power;
         switch (death)
         {
+            case Death.chute:
+                power = Power.immuneChute;
+                break;
             case Death.meurtreParBalle:
                 power = Power.immuneBalle;
                 break;
