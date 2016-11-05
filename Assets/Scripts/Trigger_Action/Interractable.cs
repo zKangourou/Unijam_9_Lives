@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Interractable : MonoBehaviour {
     protected Player player;
-    public bool done;
+    [HideInInspector]public bool done;
 
     void Start()
     {
