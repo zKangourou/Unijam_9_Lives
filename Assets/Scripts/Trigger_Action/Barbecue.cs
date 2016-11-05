@@ -5,6 +5,6 @@ public class Barbecue : Interractable {
 
     public override void Interract()
     {
-        Player.Die();
+        player.Die();
     }
 }

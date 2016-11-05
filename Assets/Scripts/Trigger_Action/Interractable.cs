@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Interractable : MonoBehaviour {
-    Player player;
+    protected Player player;
 
     void Start()
     {
