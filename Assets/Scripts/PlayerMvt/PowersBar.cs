@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 public class PowersBar : MonoBehaviour {
     [SerializeField]
-    private Image image;
-    List<Image> imagesList;
+    private Sprite blank;
+    Dictionary<string, List<Sprite>> powerDictionary;
     Player player;
 
     void Awake()
