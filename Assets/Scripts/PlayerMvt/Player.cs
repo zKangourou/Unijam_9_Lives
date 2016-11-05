@@ -145,6 +145,6 @@ public class Player : MonoBehaviour
 
     public void ResetPosition()
     {
-        transform.position = initPos;
+        //transform.position = initPos;
     }
 }

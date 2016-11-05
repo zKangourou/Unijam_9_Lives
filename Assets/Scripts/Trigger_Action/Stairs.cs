@@ -9,6 +9,7 @@ public class Stairs : Interractable
     public override void Interract()
     {
         GameObject.FindGameObjectWithTag("Player").transform.position = other.transform.position + new Vector3(0, -2.24f, 0);
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
     }
 
     void OnTriggerEnter2D()
