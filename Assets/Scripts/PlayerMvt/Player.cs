@@ -7,12 +7,25 @@ public class Player : MonoBehaviour
     private int life;
     private GameObject trigger;
     private bool action;
-    private List<State> death_list = new List<State>();
+    private List<Death> death_list = new List<Death>();
+    private List<Power> power_list = new List<Power>();
     public bool isTalking;
     //private List<Transform> myList = new List<Transform>();
     //private Dictionary<Deaths, List<Transform>> myDeath;
 
-    private enum State { immolationActive, immolationPassive, noyadePassive, noyadeActive, asphyxieActive, asphyxiePassive}
+    private enum Death {
+        drogue, medoc,
+        tazer, priseElectrique,
+        noyadePassive, noyadeActive,
+        strangulation, pendaison,
+        barbecue, lanceFlamme,
+        voiture, piano,
+        tronconneuse, hachoir,
+        suicideParBalle, meurtreParBalle,
+        lion, mange,
+        givrePassive, givreActive
+    }
+    private enum Power { immuneFeu, immuneBalle, immuneTotal }
 
     void Start()
     {
@@ -30,12 +43,41 @@ public class Player : MonoBehaviour
                 if (trigger.GetComponent<Interractable>())
                 {
                     trigger.GetComponent<Interractable>().Interract();
+                    //DieorNot(trigger.mDeath, trigger.isKilling);
+                    //AddPower(trigger.mPower);
                 }
             } 
         }
     }
 
-    private void LoseOneLife()
+    private bool IsImmune(Death death)
+    {
+        switch (death)
+        {
+            case Death.medoc:
+                return true;
+            case Death.barbecue:
+                return true;
+            case Death.suicideParBalle:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private void DieorNot(Death death, bool kill)
+    {
+        if (!IsImmune(death))
+        {
+            if (kill && (this.life != 0))
+            {
+                Debug.Log("Lose one life");
+                this.life -= 1;
+            }
+        }
+    }
+
+    public void Die()
     {
         if (this.life != 0)
         {
@@ -44,13 +86,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Die()
+    private void AddPower(Power power)
     {
-        LoseOneLife();
-    }
-
-    private void ActionPower()
-    {
+        if (!power_list.Contains(power))
+        {
+            power_list.Add(power);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
