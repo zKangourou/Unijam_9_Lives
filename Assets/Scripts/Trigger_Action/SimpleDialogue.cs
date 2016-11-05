@@ -8,6 +8,11 @@ public class SimpleDialogue : Interractable
 
     public override void Interract()
     {
-        textController.StartDialogue(textKey);
+        textController.StartDialogue(textKey,DoNothing);
+    }
+
+    public void DoNothing()
+    {
+        return;
     }
 }
