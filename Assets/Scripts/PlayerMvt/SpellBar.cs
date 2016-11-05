@@ -22,17 +22,19 @@ public class SpellBar : MonoBehaviour {
     private Image spell7;
     [SerializeField]
     private Image spell8;
-    public Dictionary<string, Image> spellDictionary;
-    //Player player;
+    public Dictionary<string, Image> spellDictionary = new Dictionary<string, Image>();
+    Player player;
+    private PowerIcones powerIcones;
+    private int inc;
 
     void Awake()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         spellDictionary.Clear();
     }
 
     void Start () {
-	    
+        inc = 0;
 	}
     
     void Update()
@@ -43,5 +45,12 @@ public class SpellBar : MonoBehaviour {
             actualText = textList[i].text;
             image.sprite = dialogueImages.GetImage(textList[i].image);
         }*/
+    }
+
+    public void DrawSpell(Player.Power power)
+    {
+        inc += 1;
+        Sprite spellSprite = powerIcones.GetImageSpell(power);
+        //spellDictionary.Add(power, spell1.spellSprite);
     }
 }

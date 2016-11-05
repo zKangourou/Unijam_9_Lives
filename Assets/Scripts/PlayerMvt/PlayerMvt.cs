@@ -15,6 +15,7 @@ public class PlayerMvt : MonoBehaviour
     private int nbSauts;
     Collider2D playerCollider;
     private Player player;
+    Animator animateur;
 
     void Start ()
     {
@@ -22,6 +23,7 @@ public class PlayerMvt : MonoBehaviour
         goUp = new Vector3(0, up, 0);
         playerCollider = this.GetComponent<Collider2D>();
         player = this.GetComponent<Player>();
+        animateur = this.GetComponent<Animator>();
     }
 
     void Update()
@@ -34,6 +36,10 @@ public class PlayerMvt : MonoBehaviour
                 nbSauts = 0;
             }*/
             playerMovement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            if(animateur != null)
+            {
+                animateur.SetFloat("Avance", playerMovement.x);
+            }
             jump = Input.GetButton("Jump");
             if (jump && nbSauts == 0)
             {
