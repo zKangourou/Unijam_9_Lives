@@ -16,7 +16,7 @@
     </DialoguePatern>
 
 	<DialoguePatern>
-      <key>exemple_de_cle</key>
+      <key>discussion_de_depart</key>
       <elements>
         <DialogueElementPatern>
           <image>pigeon</image>
