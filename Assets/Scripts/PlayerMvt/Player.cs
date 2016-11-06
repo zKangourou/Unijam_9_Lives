@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
 
     public bool EndChoice()
     {
-        Debug.Log("hjtdkdt");
         if (power_list.Count != 0)
         {
             return power_list.Contains(Power.tireDesBalles);
