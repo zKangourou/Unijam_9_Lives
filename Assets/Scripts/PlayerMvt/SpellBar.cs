@@ -25,10 +25,12 @@ public class SpellBar : MonoBehaviour {
     [SerializeField]
     private Sprite blank;
     public List<Image> listImage = new List<Image>();
+    public List<Sprite> list = new List<Sprite>();
     Player player;
 
     void Awake()
     {
+        list.Clear();
         listImage.Clear();
         listImage.Add(spell1);
         listImage.Add(spell2);
@@ -41,24 +43,15 @@ public class SpellBar : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    public void DrawSpell(Player.Power power)
+    public void DrawSpellBar(List<Player.Power> powerList)
     {
-        if (listImage.Count != 0)
+        for (int i =0;i<powerList.Count;i++)
         {
-            Debug.Log("draw, power=" + power);
-            for (int i = 0; i < listImage.Count; i++)
-            {
-                if (listImage[i] == blank)
-                {
-                    Debug.Log("listImage[i]= " + listImage[i] + ", draw spell");
-                    listImage[i].sprite = powerIcones.GetImageSpell(power); ;
-                    break;
-                }
-            }
+            listImage[i].sprite = powerIcones.GetImageSpell(powerList[i]);
         }
     }
 
-    void Start () {
+        void Start () {
 	}
     
     void Update()
