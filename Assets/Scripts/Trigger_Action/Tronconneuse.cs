@@ -9,11 +9,16 @@ public class Tronconneuse : Interractable
 
     public override void Interract()
     {
-        if (!done)
-        {
-            txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.tronconneuse);
-            player.AddPower(Player.Power.desolidarisation);
-            done = true;
-        }
+    }
+
+    void OnTriggerEnter2D()
+    {
+        Debug.Log("piece sombre");
+        this.gameObject.SetActive(false);
+        /*
+        txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.noyadeActive);
+        SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
+        player.Kill(Player.Death.noyadeActive);
+        player.AddPower(Player.Power.canalisation);*/
     }
 }
