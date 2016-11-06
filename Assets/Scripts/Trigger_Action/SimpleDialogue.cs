@@ -16,9 +16,12 @@ public class SimpleDialogue : Interractable
         return;
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+        if (val.tag == "Player")
+        {
+            GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+        }
     }
     void OnTriggerExit2D()
     {
