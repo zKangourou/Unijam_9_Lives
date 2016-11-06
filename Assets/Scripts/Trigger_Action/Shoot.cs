@@ -8,11 +8,13 @@ public class Shoot : MonoBehaviour {
     public bool canShoot;
     private Player player;
     private bool tir;
+    bool devant;
 
     // Use this for initialization
     void Start () {
         player = this.GetComponent<Player>();
         canShoot = false;
+        devant = true;
     }
 	
 	// Update is called once per frame
@@ -24,15 +26,18 @@ public class Shoot : MonoBehaviour {
             tir = Input.GetKeyDown(KeyCode.Alpha1);
             if (tir && canShoot)
             {
-
-                if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMvt>().avance > 0)
+                if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMvt>().avance > 0)
+                { devant = true; }
+                if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMvt>().avance < 0)
                 {
-                    Debug.Log("devant");
+                    devant = false;
+                }
+                if (devant)
+                {
                     Instantiate(laser, player.transform.position, new Quaternion(0, 0, 0, 0));
                 }
                 else
                 {
-                    Debug.Log("derrière");
                     Instantiate(laser2, player.transform.position, new Quaternion(0, 0, 0, 0));
                 }
             }
