@@ -19,14 +19,14 @@ public class BossDeFin : Interractable
         if (player.EndChoice())
         {
             txtController.StartDialogue("boss_enerve", TexteController.DialogueType.BOSS);
-            //txt = "KUKUKU THE CAT IS DEAD (FOR REAL)";
+            txt = "KUKUKU THE CAT IS DEAD (FOR REAL)";
         }
         else
         {
             txtController.StartDialogue("boss_joyeux", TexteController.DialogueType.BOSS);
-            //txt = "HAHAHAHAH LES CHATS REIGNERONT SUR L'UNIVERS";
+            txt = "HAHAHAHAH LES CHATS REIGNERONT SUR L'UNIVERS";
         }
-        //endSceneController.GameOver(txt);
+        endSceneController.SetText(txt);
         //SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
     }
 }
