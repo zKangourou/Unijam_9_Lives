@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
-    public enum Bruitages {CHUTE,VOITURE,PROCHEPRISE,PRISE,NOYADE,LAZER,HACHOIR,BOSS_DEMONIAQUE, VIOLON};
+    public enum Bruitages {CHUTE,VOITURE,PROCHEPRISE,PRISE,NOYADE,LAZER,HACHOIR,BOSS_DEMONIAQUE, VIOLON, STOP};
     public enum Musique { MUSIQUE};
 
     /// <summary>
@@ -127,6 +127,9 @@ public class SoundManager : Singleton<SoundManager>
         originalClip = null;
         switch (name)
         {
+            case Bruitages.STOP:
+                originalClip = null;
+                break;
             case Bruitages.VIOLON:
                 originalClip = bruitageViolon;
                 break;
