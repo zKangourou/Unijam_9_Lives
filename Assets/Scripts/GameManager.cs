@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+    
 	
 	// Update is called once per frame
 	void Update () {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            GameObject.DontDestroyOnLoad(SoundManager.Instance.gameObject);
             SceneManager.LoadScene("Game");
         }
     }
