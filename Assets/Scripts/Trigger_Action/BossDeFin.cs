@@ -6,15 +6,9 @@ public class BossDeFin : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    [SerializeField]
-    string passive_death;
-    [SerializeField]
-    string active_death;
-
-    void Start()
-    {
-    }
-
+    //string boss_joyeux;
+    //string boss_enerve;
+    
     public override void Interract()
     {
     }
@@ -23,13 +17,11 @@ public class BossDeFin : Interractable
     {
         if (player.EndChoice())
         {
-            Debug.Log("blo");
-            txtController.StartDialogue(active_death, TexteController.DialogueType.NOTHING);
+            txtController.StartDialogue("boss_enerve", TexteController.DialogueType.NOTHING);
         }
         else
         {
-            Debug.Log("bla");
-            txtController.StartDialogue(passive_death, TexteController.DialogueType.NOTHING);
+            txtController.StartDialogue("boss_joyeux", TexteController.DialogueType.NOTHING);
         }
         //SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
     }
