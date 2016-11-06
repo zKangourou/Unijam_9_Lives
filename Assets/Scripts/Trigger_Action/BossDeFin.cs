@@ -16,10 +16,11 @@ public class BossDeFin : Interractable
 
     void OnTriggerEnter2D()
     {
-        if (player.EndChoice())
+        if (!player.EndChoice())
         {
             txtController.StartDialogue("boss_enerve", TexteController.DialogueType.BOSS);
-            txt = "KUKUKU THE CAT IS DEAD (FOR REAL)";
+            txt = "C'est pas pour maintenant mais... UN JOUR LES CHATS REIGNERONT SUR L'UNIVERS";
+            SoundManager.PlayBruitage(SoundManager.Bruitages.BOSS_DEMONIAQUE);
         }
         else
         {
@@ -27,6 +28,5 @@ public class BossDeFin : Interractable
             txt = "HAHAHAHAH LES CHATS REIGNERONT SUR L'UNIVERS";
         }
         endSceneController.SetText(txt);
-        //SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
     }
 }
