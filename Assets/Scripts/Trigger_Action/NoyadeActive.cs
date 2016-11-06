@@ -5,19 +5,19 @@ public class NoyadeActive : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    string isImmune_dial = "cat immune";
-    string death_dial = "exemple_de_cle";
+    string death_dial = "mort_par_noyade";
 
     public override void Interract()
     {
-        if (player.IsImmune(Player.Death.noyadeActive))
-        {
-            txtController.StartDialogue(isImmune_dial, TexteController.DialogueType.NOTHING);
-        }
-        else
+    }
+    void OnTriggerEnter2D()
+    {
+        if (!player.IsImmune(Player.Death.noyadePassive))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.noyadeActive);
+            SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
+            player.Kill(Player.Death.noyadeActive);
+            player.AddPower(Player.Power.canalisation);
         }
-        player.AddPower(Player.Power.canalisation);
     }
 }
