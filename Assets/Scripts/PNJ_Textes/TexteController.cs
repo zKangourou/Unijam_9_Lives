@@ -18,6 +18,8 @@ public class TexteController : MonoBehaviour {
     [SerializeField] private GameObject things;
     [SerializeField] private DeathScreenController death;
     [SerializeField] private DialogueImages dialogueImages;
+    [SerializeField]
+    private EndSceneController end;
     string actualText;
     List<DialogueElementPatern> textList;
     bool skip;
@@ -99,6 +101,9 @@ public class TexteController : MonoBehaviour {
         {
             case DialogueType.DIE:
                 death.StartDeath(deathType);
+                break;
+            case DialogueType.BOSS:
+                end.GameOver();
                 break;
             case DialogueType.NOTHING:
             default:
