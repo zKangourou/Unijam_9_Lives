@@ -64,6 +64,23 @@ public class Player : MonoBehaviour
             }
         }
         spellBar.DrawSpellBar(power_list);
+
+        if (power_list.Contains(Power.tireDesBalles) && power_list[0]!= Power.tireDesBalles)
+        {
+            List<Power> tmp = new List<Power>();
+            foreach(Power val in power_list)
+            {
+                tmp.Add(val);
+            }
+            tmp.Remove(Power.tireDesBalles);
+            power_list.Clear();
+            power_list.Add(Power.tireDesBalles);
+
+            foreach (Power val in tmp)
+            {
+                power_list.Add(val);
+            }
+        }
     }
 
     public bool IsImmune(Death death)
