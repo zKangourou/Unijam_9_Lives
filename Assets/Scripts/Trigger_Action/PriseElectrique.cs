@@ -10,7 +10,7 @@ public class PriseElectrique : Interractable
 
     public override void Interract()
     {
-        if (!done)
+        if (!player.power_list.Contains(Player.Power.cableElectrique))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.priseElectrique);
             player.Kill(Player.Death.priseElectrique);
