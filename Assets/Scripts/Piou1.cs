@@ -26,7 +26,10 @@ public class Piou1 : MonoBehaviour {
             Debug.Log("pouf");
             GameObject.Destroy(caisse.gameObject);
         }
-        GameObject.Destroy(this.gameObject);
+        if (caisse.gameObject.tag != "Water")
+        {
+            GameObject.Destroy(this.gameObject);
+        }
 
 
     }
