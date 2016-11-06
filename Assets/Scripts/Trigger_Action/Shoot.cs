@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = this.GetComponent<Player>();
-        canShoot = true;
+        canShoot = false;
     }
 	
 	// Update is called once per frame
