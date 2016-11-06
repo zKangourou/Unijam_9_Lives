@@ -92,6 +92,17 @@
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
+    
+    <DialoguePatern>
+      <key>discution_de_depart</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>pigeon</image>
+          <text>Ma petite fille chérie m’a raconté sa rencontre avec toi. Elle avait raison, tu es vraiment troooooop mignon ! Viens là pour que je puisse te caresser.</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
+
 
   </list>
 </DialogueListPatern>
