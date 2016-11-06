@@ -25,7 +25,7 @@ public class BossDeFin : Interractable
         else
         {
             txtController.StartDialogue("boss_joyeux", TexteController.DialogueType.BOSS);
-            txt = "HAHAHAHAH LES CHATS REIGNERONT SUR L'UNIVERS";
+            txt = "HAHAHAHAH LES CHATS REGNERONT SUR L'UNIVERS";
         }
         endSceneController.SetText(txt);
     }
