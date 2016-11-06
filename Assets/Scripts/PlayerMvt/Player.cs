@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public List<Power> power_list = new List<Power>();
     public bool isTalking;
+    [SerializeField]
     private SpellBar spellBar;
 
     public enum Death {
@@ -39,7 +40,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        //spellBar = this.GetComponent<SpellBar>();
         isTalking = false;
         life = 9;
         death_list.Clear();
@@ -49,9 +49,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < power_list.Count; i++)
+        power_list.Add(Power.immuneFeu);
+        if (power_list.Count != 0)
         {
-            //spellBar.DrawSpellBar(power_list[i]);
+            for (int i = 0; i < power_list.Count; i++)
+            {
+                Debug.Log("draw, power_list[i]=" + power_list[i]);
+                spellBar.DrawSpell(power_list[i]);
+            }
         }
         if (!isTalking)
         {

@@ -22,11 +22,11 @@ public class SpellBar : MonoBehaviour {
     private Image spell7;
     [SerializeField]
     private Image spell8;
-    private List<Image> listImage = new List<Image>();
+    public List<Image> listImage = new List<Image>();
     public Dictionary<string, Image> spellDictionary = new Dictionary<string, Image>();
     Player player;
+    [SerializeField]
     private PowerIcones powerIcones;
-    private Image image;
 
     void Awake()
     {
@@ -53,11 +53,14 @@ public class SpellBar : MonoBehaviour {
     public void DrawSpell(Player.Power power)
     {
         Sprite spellSprite = powerIcones.GetImageSpell(power);
-        if (listImage.Count != 0) {
+        if (listImage.Count != 0)
+        {
+            Debug.Log("draw, power="+power);
             for (int i = 0; i < listImage.Count; i++)
             {
                 if (listImage[i] == blank)
                 {
+                    Debug.Log("listImage[i]= " + listImage[i] + ", draw spell");
                     listImage[i].sprite = spellSprite;
                     break;
                 }
