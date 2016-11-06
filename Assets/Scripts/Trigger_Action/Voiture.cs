@@ -17,7 +17,7 @@ public class Voiture : Interractable
         {
             player.isTalking = true;
             player.Kill(Player.Death.voiture);
-            player.AddPower(Player.Power.superman);
+            player.AddPower(Player.Power.passeSousLesPortes);
             done = true;
             StartCoroutine(PrintCar());
         }
