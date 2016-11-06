@@ -8,15 +8,7 @@ public class Water : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Rigidbody2D>().gravityScale /= 4;
-        }
-    }
-
-    void OnTrigger2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            other.GetComponent<PlayerMvt>().ResetJump();
+            other.GetComponent<PlayerMvt>().underwater = true;
         }
     }
 
@@ -24,7 +16,7 @@ public class Water : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Rigidbody2D>().gravityScale *= 4;
+            other.GetComponent<PlayerMvt>().underwater = false;
         }
     }
 }

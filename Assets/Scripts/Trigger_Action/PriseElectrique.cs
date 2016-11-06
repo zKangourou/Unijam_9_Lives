@@ -13,6 +13,7 @@ public class PriseElectrique : Interractable
         if (!done)
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.priseElectrique);
+            player.Kill(Player.Death.priseElectrique);
             player.AddPower(Player.Power.cableElectrique);
             done = true;
             SoundManager.PlayBruitage(SoundManager.Bruitages.PRISE);

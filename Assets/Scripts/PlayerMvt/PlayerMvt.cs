@@ -5,6 +5,7 @@ public class PlayerMvt : MonoBehaviour
 {
     [SerializeField]
     private float speed;
+    private float waterSpeed = 2f;
     [SerializeField]
     private float up;
     private Vector3 playerMovement;
@@ -17,6 +18,8 @@ public class PlayerMvt : MonoBehaviour
     private Player player;
     Animator animateur;
 
+    public bool underwater;
+
     void Start ()
     {
         nbSauts = 0;
@@ -24,6 +27,7 @@ public class PlayerMvt : MonoBehaviour
         playerCollider = this.GetComponent<Collider2D>();
         player = this.GetComponent<Player>();
         animateur = this.GetComponent<Animator>();
+        underwater = false;
     }
 
     void Update()
@@ -41,16 +45,29 @@ public class PlayerMvt : MonoBehaviour
                 animateur.SetFloat("Avance", playerMovement.x);
             }
             jump = Input.GetButton("Jump");
-            if (jump && nbSauts == 0)
+            if (jump && (nbSauts == 0||underwater))
             {
-                GetComponent<Rigidbody2D>().velocity = goUp;
+                if (underwater)
+                {
+                    GetComponent<Rigidbody2D>().velocity = waterSpeed/speed*goUp;
+                }
+                else
+                {
+                    GetComponent<Rigidbody2D>().velocity = goUp;
+                }
                 nbSauts += 1;
                 if(animateur != null)
                 {
                     animateur.SetBool("Jump", true);
                 }
             }
-            this.gameObject.transform.position += (playerMovement + directionY) * speed * Time.deltaTime;
+            if(underwater && GetComponent<Rigidbody2D>().velocity.y < -waterSpeed / speed)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Mathf.Sign(GetComponent<Rigidbody2D>().velocity.y) * waterSpeed / speed*up/2);
+            }
+            
+            float tmpSpeed = underwater ? waterSpeed : speed;
+            this.gameObject.transform.position += (playerMovement + directionY) * tmpSpeed * Time.deltaTime;
             posY_last_frame = this.gameObject.transform.position.y;
             if (animateur != null)
             {
