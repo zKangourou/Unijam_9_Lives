@@ -46,6 +46,7 @@ public class PowerIcones : MonoBehaviour
         dicoSpell.Add(Player.Power.desolidarisation, cut_actif);
         dicoSpell.Add(Player.Power.hachis, cut_Passif);
         dicoSpell.Add(Player.Power.passeSousLesPortes, ecrase_actif);
+        dicoSpell.Add(Player.Power.cableElectrique, electro_passif);
         dicoSpell.Add(Player.Power.pikatchu, electro_actif);
         dicoSpell.Add(Player.Power.flamme, fire_actif);
         dicoSpell.Add(Player.Power.immuneFeu, fire_passif);
