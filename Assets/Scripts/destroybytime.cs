@@ -10,7 +10,7 @@ public class destroybytime : MonoBehaviour {
 
     IEnumerator death()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         GameObject.Destroy(this.gameObject);
     }
 }
