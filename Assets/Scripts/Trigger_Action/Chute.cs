@@ -11,9 +11,9 @@ public class Chute : Interractable
     {
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (!player.IsImmune(Player.Death.chute))
+        if (val.tag=="Player" && !player.IsImmune(Player.Death.chute))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.chute);
             player.Kill(Player.Death.chute);

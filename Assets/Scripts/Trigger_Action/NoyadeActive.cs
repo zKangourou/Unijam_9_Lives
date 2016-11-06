@@ -10,9 +10,9 @@ public class NoyadeActive : Interractable
     public override void Interract()
     {
     }
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (!player.power_list.Contains(Player.Power.canalisation))
+			if (val.tag == "Player" && !player.power_list.Contains(Player.Power.canalisation))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.noyadeActive);
             SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
