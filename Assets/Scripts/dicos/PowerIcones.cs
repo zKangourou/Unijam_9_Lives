@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PowerIcones : MonoBehaviour
 {
     Dictionary<Player.Death, Sprite> dico;
-    private Dictionary<Player.Power, Sprite> dicoSpell;
+    Dictionary<Player.Power, Sprite> dicoSpell;
     [SerializeField] public Sprite none;
     [SerializeField] public Sprite chute;
     [SerializeField] public Sprite cut_actif;

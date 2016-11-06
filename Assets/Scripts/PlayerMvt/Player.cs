@@ -49,15 +49,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-     //   power_list.Add(Power.immuneFeu);
-        if (power_list.Count != 0)
-        {
-            for (int i = 0; i < power_list.Count; i++)
-            {
-                Debug.Log("draw, power_list[i]=" + power_list[i]);
-                spellBar.DrawSpell(power_list[i]);
-            }
-        }
         if (!isTalking)
         {
             action = Input.GetButtonDown("Action");
@@ -72,6 +63,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        spellBar.DrawSpellBar(power_list);
     }
 
     public bool IsImmune(Death death)
