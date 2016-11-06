@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PowerIcones : MonoBehaviour
 {
     Dictionary<Player.Death, Sprite> dico;
-    Dictionary<Player.Power, Sprite> dicoSpell;
+    private Dictionary<Player.Power, Sprite> dicoSpell;
     [SerializeField] public Sprite none;
     [SerializeField] public Sprite chute;
     [SerializeField] public Sprite cut_actif;
@@ -23,7 +23,7 @@ public class PowerIcones : MonoBehaviour
     [SerializeField] public Sprite noyade_passif;
     [SerializeField] public Sprite strangle_passif;
 
-    void Awake()
+    void Update()
     {
         dico = new Dictionary<Player.Death, Sprite>();
         dico.Add(Player.Death.chute, chute);
@@ -31,6 +31,7 @@ public class PowerIcones : MonoBehaviour
         dico.Add(Player.Death.hachoir, cut_Passif);
         dico.Add(Player.Death.voiture, ecrase_actif);
         dico.Add(Player.Death.tazer, electro_actif);
+        dico.Add(Player.Death.priseElectrique, electro_passif);
         dico.Add(Player.Death.lanceFlamme, fire_actif);
         dico.Add(Player.Death.barbecue, fire_passif);
         dico.Add(Player.Death.givreActive, glace_actif);
