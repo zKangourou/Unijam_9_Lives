@@ -5,7 +5,8 @@ public class PlayerMvt : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    private float waterSpeed = 2f;
+    [SerializeField]
+    private float waterSpeed;
     [SerializeField]
     private float up;
     private Vector3 playerMovement;
