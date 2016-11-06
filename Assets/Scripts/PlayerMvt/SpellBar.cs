@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 public class SpellBar : MonoBehaviour {
     [SerializeField]
-    private Sprite blank;
-    [SerializeField]
     private Image spell1;
     [SerializeField]
     private Image spell2;
@@ -22,11 +20,12 @@ public class SpellBar : MonoBehaviour {
     private Image spell7;
     [SerializeField]
     private Image spell8;
-    public List<Image> listImage = new List<Image>();
-    public Dictionary<string, Image> spellDictionary = new Dictionary<string, Image>();
-    Player player;
     [SerializeField]
     private PowerIcones powerIcones;
+    [SerializeField]
+    private Sprite blank;
+    public List<Image> listImage = new List<Image>();
+    Player player;
 
     void Awake()
     {
@@ -40,7 +39,23 @@ public class SpellBar : MonoBehaviour {
         listImage.Add(spell7);
         listImage.Add(spell8);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        spellDictionary.Clear();
+    }
+
+    public void DrawSpell(Player.Power power)
+    {
+        if (listImage.Count != 0)
+        {
+            Debug.Log("draw, power=" + power);
+            for (int i = 0; i < listImage.Count; i++)
+            {
+                if (listImage[i] == blank)
+                {
+                    Debug.Log("listImage[i]= " + listImage[i] + ", draw spell");
+                    listImage[i].sprite = powerIcones.GetImageSpell(power); ;
+                    break;
+                }
+            }
+        }
     }
 
     void Start () {
@@ -49,22 +64,5 @@ public class SpellBar : MonoBehaviour {
     void Update()
     {
     }
-
-    public void DrawSpell(Player.Power power)
-    {
-        Sprite spellSprite = powerIcones.GetImageSpell(power);
-        if (listImage.Count != 0)
-        {
-            Debug.Log("draw, power="+power);
-            for (int i = 0; i < listImage.Count; i++)
-            {
-                if (listImage[i] == blank)
-                {
-                    Debug.Log("listImage[i]= " + listImage[i] + ", draw spell");
-                    listImage[i].sprite = spellSprite;
-                    break;
-                }
-            }
-        }
-    }
+    
 }
