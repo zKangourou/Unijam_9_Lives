@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        power_list.Add(Power.immuneFeu);
+     //   power_list.Add(Power.immuneFeu);
         if (power_list.Count != 0)
         {
             for (int i = 0; i < power_list.Count; i++)
