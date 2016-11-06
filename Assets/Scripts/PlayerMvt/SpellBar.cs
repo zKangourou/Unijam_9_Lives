@@ -4,26 +4,16 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class SpellBar : MonoBehaviour {
-    [SerializeField]
-    private Image spell1;
-    [SerializeField]
-    private Image spell2;
-    [SerializeField]
-    private Image spell3;
-    [SerializeField]
-    private Image spell4;
-    [SerializeField]
-    private Image spell5;
-    [SerializeField]
-    private Image spell6;
-    [SerializeField]
-    private Image spell7;
-    [SerializeField]
-    private Image spell8;
-    [SerializeField]
-    private PowerIcones powerIcones;
-    [SerializeField]
-    private Sprite blank;
+    [SerializeField] private Image spell1;
+    [SerializeField] private Image spell2;
+    [SerializeField] private Image spell3;
+    [SerializeField] private Image spell4;
+    [SerializeField] private Image spell5;
+    [SerializeField] private Image spell6;
+    [SerializeField] private Image spell7;
+    [SerializeField] private Image spell8;
+    [SerializeField] private PowerIcones powerIcones;
+    [SerializeField] private Sprite blank;
     public List<Image> listImage = new List<Image>();
     public List<Sprite> list = new List<Sprite>();
     Player player;
@@ -45,9 +35,12 @@ public class SpellBar : MonoBehaviour {
 
     public void DrawSpellBar(List<Player.Power> powerList)
     {
-        for (int i =0;i<powerList.Count;i++)
+        if (powerList.Count != 0)
         {
-            listImage[i].sprite = powerIcones.GetImageSpell(powerList[i]);
+            for (int i = 0; i < powerList.Count; i++)
+            {
+                listImage[i].sprite = powerIcones.GetImageSpell(powerList[i]);
+            }
         }
     }
 
