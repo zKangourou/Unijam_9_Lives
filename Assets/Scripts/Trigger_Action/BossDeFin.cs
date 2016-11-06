@@ -6,8 +6,6 @@ public class BossDeFin : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    //string boss_joyeux;
-    //string boss_enerve;
     
     public override void Interract()
     {

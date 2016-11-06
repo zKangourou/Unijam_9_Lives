@@ -17,6 +17,7 @@ public class PlayerMvt : MonoBehaviour
     Collider2D playerCollider;
     private Player player;
     Animator animateur;
+    public float avance;
 
     public bool underwater;
 
@@ -43,6 +44,7 @@ public class PlayerMvt : MonoBehaviour
             if(animateur != null)
             {
                 animateur.SetFloat("Avance", playerMovement.x);
+                avance = playerMovement.x;
             }
             jump = Input.GetButton("Jump");
             if (jump && (nbSauts == 0||underwater))
