@@ -15,7 +15,7 @@ public class Hachoir : Interractable
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.hachoir);
             player.AddPower(Player.Power.hachis);
             done = true;
-            //SoundManager.PlayBruitage(SoundManager.Bruitages.PRISE);
+            SoundManager.PlayBruitage(SoundManager.Bruitages.HACHOIR);
         }
         else
         {

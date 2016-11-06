@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
-    public enum Bruitages {CHUTE,VOITURE,PRISE,NOYADE,LAZER};
-    public enum Musique { };
+    public enum Bruitages {CHUTE,VOITURE,PROCHEPRISE,PRISE,NOYADE,LAZER,HACHOIR};
+    public enum Musique { MUSIQUE};
 
     /// <summary>
     /// lien vers la source sonore (pour la musique)
@@ -33,6 +33,7 @@ public class SoundManager : Singleton<SoundManager>
     //************************
     //********Musiques********
     //************************
+    [SerializeField] AudioClip musiqueMusique;
 
     //************************
     //********Bruitages*******
@@ -42,6 +43,8 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField] AudioClip bruitagePrise;
     [SerializeField] AudioClip bruitageNoyade;
     [SerializeField] AudioClip bruitageLazer;
+    [SerializeField] AudioClip bruitageProchePrise;
+    [SerializeField] AudioClip bruitageHachoir;
 
 
     /// <summary>
@@ -63,6 +66,8 @@ public class SoundManager : Singleton<SoundManager>
         sourceBruitageGO.transform.SetParent(this.transform);
         source = sourceGO.GetComponent<AudioSource>();
         sourceBruitage = sourceBruitageGO.GetComponent<AudioSource>();
+        source.loop = true;
+        ChangeMusique(Musique.MUSIQUE);
     }
 
     /// <summary>
@@ -134,6 +139,12 @@ public class SoundManager : Singleton<SoundManager>
                 break;
             case Bruitages.NOYADE:
                 originalClip = bruitageNoyade;
+                break;
+            case Bruitages.PROCHEPRISE:
+                originalClip = bruitageProchePrise;
+                break;
+            case Bruitages.HACHOIR:
+                originalClip = bruitageHachoir;
                 break;
         }
         sourceBruitage.PlayOneShot(originalClip);
@@ -237,6 +248,12 @@ public class SoundManager : Singleton<SoundManager>
         source.Stop();
         AudioClip originalClip = null;
         //TODO ajouter un swich pour chaque musique
+        switch (name)
+        {
+            case Musique.MUSIQUE:
+                originalClip = musiqueMusique;
+                break;
+        }
         source.clip = originalClip;
         source.Play();
     }
