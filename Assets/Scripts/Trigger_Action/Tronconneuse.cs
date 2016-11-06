@@ -9,6 +9,8 @@ public class Tronconneuse : Interractable
     [SerializeField]
     GameObject pieceSombre;
     private Vector3 posBob;
+    private bool bla;
+    private int inc = 0;
 
     public override void Interract()
     {
@@ -16,12 +18,11 @@ public class Tronconneuse : Interractable
 
     void OnTriggerEnter2D(Collider2D val)
     {
-        Debug.Log("trigger tronconneuse");
-        GetComponent<Collider2D>().enabled = false;
         pieceSombre.SetActive(false);
         if (val.tag == "Player" && !done)
         {
             player.isTalking = true;
+            bla = true;
             player.Kill(Player.Death.tronconneuse);
             player.AddPower(Player.Power.desolidarisation);
             done = true;
@@ -30,25 +31,29 @@ public class Tronconneuse : Interractable
         }
     }
 
+    void OnTriggerExit2D(Collider2D val)
+    {
+        SoundManager.PlayBruitage(SoundManager.Bruitages.STOP);
+        GetComponent<Collider2D>().enabled = false;
+        if (val.tag == "Player")
+        {
+            player.isTalking = false;
+            pieceSombre.SetActive(true);
+            bla = false;
+        }
+    }
+
     IEnumerator BobMove()
     {
-        //transform.localScale = new Vector3(0, 0, 1);
-        //sprite.color = Color.white;
-        bool sound = true;
-        //while (transform.localScale.x < 0.99f)
-        while (this.transform.position.x > player.transform.position.x)
+        while (bla && this.transform.position.x > player.transform.position.x)
         {
-            this.transform.position -= new Vector3(0.3f, 0, 0);
-            player.transform.position -= new Vector3(0.08f, 0, 0);
-            /*
-            if (sound && transform.localScale.x > 0.20f)
+            inc += 1;
+            this.transform.position -= new Vector3(0.05f, 0, 0);
+            if (inc > 6)
             {
-                SoundManager.PlayBruitage(SoundManager.Bruitages.VOITURE);
-                sound = false;
-            }*/
+                player.transform.position -= new Vector3(0.06f, 0, 0);
+            }
             yield return new WaitForSeconds(0.03f);
         }
-        //transform.localScale = new Vector3(1, 1, 1);
-        txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.tronconneuse);
     }
 }
