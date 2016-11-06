@@ -15,9 +15,9 @@ public class Tuyeau : Interractable
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (player.power_list.Contains(Player.Power.canalisation))
+        if (val.tag == "Player" && player.power_list.Contains(Player.Power.canalisation))
         {
             GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
         }
