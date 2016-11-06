@@ -7,7 +7,7 @@ public class PriseTelephone : Interractable
 
     public override void Interract()
     {
-        if(true)//ajouter un test de skill
+        if(player.power_list.Contains(Player.Power.cableElectrique))//ajouter un test de skill
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = other.transform.position;
             GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
@@ -16,7 +16,10 @@ public class PriseTelephone : Interractable
 
     void OnTriggerEnter2D()
     {
-        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+        if (player.power_list.Contains(Player.Power.cableElectrique))//ajouter un test de skill
+        {
+            GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+        }
     }
     void OnTriggerExit2D()
     {

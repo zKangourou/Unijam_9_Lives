@@ -48,5 +48,15 @@
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
+    <DialoguePatern>
+      <key>mort_par_baignoire</key>
+      <elements>
+      </elements>
+    </DialoguePatern>
+    <DialoguePatern>
+      <key>mort_par_noyade</key>
+      <elements>
+      </elements>
+    </DialoguePatern>
   </list>
 </DialogueListPatern>
