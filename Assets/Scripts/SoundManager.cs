@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
-    public enum Bruitages {CHUTE,VOITURE};
+    public enum Bruitages {CHUTE,VOITURE,PRISE};
     public enum Musique { };
 
     /// <summary>
@@ -39,6 +39,7 @@ public class SoundManager : Singleton<SoundManager>
     //************************
     [SerializeField] AudioClip bruitageChute;
     [SerializeField] AudioClip bruitageVoiture;
+    [SerializeField] AudioClip bruitagePrise;
 
 
     /// <summary>
@@ -122,6 +123,9 @@ public class SoundManager : Singleton<SoundManager>
                 break;
             case Bruitages.CHUTE:
                 originalClip = bruitageChute;
+                break;
+            case Bruitages.PRISE:
+                originalClip = bruitagePrise;
                 break;
         }
         sourceBruitage.PlayOneShot(originalClip);
