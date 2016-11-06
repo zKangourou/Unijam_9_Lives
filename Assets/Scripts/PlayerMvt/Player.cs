@@ -83,6 +83,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public bool EndChoice()
+    {
+        if (power_list.Count != 0)
+        {
+            return power_list.Contains(Power.tireDesBalles);
+        }
+        else return false;
+    }
+
     public bool IsImmune(Death death)
     {
         Power power;

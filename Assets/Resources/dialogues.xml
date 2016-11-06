@@ -66,5 +66,32 @@
       <elements>
       </elements>
     </DialoguePatern>
+    <DialoguePatern>
+      <key>boss_enerve</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>boss</image>
+          <text>Tous les chats devraient mourir ! Je vais t’éliminer et me débarrasser de tous les autres membres de ton espèce !</text>
+        </DialogueElementPatern>
+        <DialogueElementPatern>
+          <image>boss</image>
+          <text>Un combat féroce s’engage, mais, grâce à vos capacités spéciales, vous prenez rapidement l’avantage, la corpulence de votre adversaire ne l’aidant pas dans le combat. En lui sautant à la gorge, vous mettez fin à sa triste vie, et continuez dans votre quête de libération des chats.</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
+    <DialoguePatern>
+      <key>boss_joyeux</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>boss</image>
+          <text>Ma petite fille chérie m’a raconté sa rencontre avec toi. Elle avait raison, tu es vraiment troooooop mignon ! Viens là pour que je puisse te caresser.</text>
+        </DialogueElementPatern>
+        <DialogueElementPatern>
+          <image>boss</image>
+          <text>Après des câlins intenses, le directeur se décida à arrêter toutes ses usines, à libérer tous les animaux captifs et à se reconvertir dans la vente de vêtements pour chats.</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
+
   </list>
 </DialogueListPatern>
