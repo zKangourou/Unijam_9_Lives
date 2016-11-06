@@ -31,7 +31,7 @@ public class Voiture : Interractable
         while(transform.localScale.x<0.99f)
         {
             transform.localScale += new Vector3(0.01f, 0.01f, 0);
-            if (sound && transform.localScale.x > 0.10f)
+            if (sound && transform.localScale.x > 0.20f)
             {
                 SoundManager.PlayBruitage(SoundManager.Bruitages.VOITURE);
                 sound = false;
