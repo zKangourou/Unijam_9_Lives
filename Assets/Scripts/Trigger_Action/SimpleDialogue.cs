@@ -15,4 +15,13 @@ public class SimpleDialogue : Interractable
     {
         return;
     }
+
+    void OnTriggerEnter2D()
+    {
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+    }
+    void OnTriggerExit2D()
+    {
+        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
+    }
 }
