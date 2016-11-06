@@ -31,6 +31,7 @@ public class PowerIcones : MonoBehaviour
         dico.Add(Player.Death.hachoir, cut_Passif);
         dico.Add(Player.Death.voiture, ecrase_actif);
         dico.Add(Player.Death.tazer, electro_actif);
+        dico.Add(Player.Death.priseElectrique, electro_passif);
         dico.Add(Player.Death.lanceFlamme, fire_actif);
         dico.Add(Player.Death.barbecue, fire_passif);
         dico.Add(Player.Death.givreActive, glace_actif);
