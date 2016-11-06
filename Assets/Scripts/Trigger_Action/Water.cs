@@ -12,6 +12,14 @@ public class Water : MonoBehaviour {
         }
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<PlayerMvt>().underwater = true;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
