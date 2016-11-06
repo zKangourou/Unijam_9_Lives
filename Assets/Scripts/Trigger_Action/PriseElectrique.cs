@@ -27,6 +27,7 @@ public class PriseElectrique : Interractable
     void OnTriggerEnter2D()
     {
         GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+        SoundManager.PlayBruitage(SoundManager.Bruitages.PROCHEPRISE);
     }
     void OnTriggerExit2D()
     {

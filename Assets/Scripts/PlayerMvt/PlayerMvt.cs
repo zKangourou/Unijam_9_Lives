@@ -66,4 +66,9 @@ public class PlayerMvt : MonoBehaviour
             }
         }
     }
+
+    public void ResetJump()
+    {
+        nbSauts = 0;
+    }
 }
