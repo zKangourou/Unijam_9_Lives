@@ -67,7 +67,7 @@ public class SoundManager : Singleton<SoundManager>
         source = sourceGO.GetComponent<AudioSource>();
         sourceBruitage = sourceBruitageGO.GetComponent<AudioSource>();
         source.loop = true;
-        PlayMusique(Musique.MUSIQUE);
+        ChangeMusique(Musique.MUSIQUE);
     }
 
     /// <summary>
