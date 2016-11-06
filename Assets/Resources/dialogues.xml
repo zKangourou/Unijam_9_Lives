@@ -15,13 +15,21 @@
       </elements>
     </DialoguePatern>
 
-
+	<DialoguePatern>
+      <key>discussion_de_depart</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>pigeon</image>
+          <text>Pigeon : Salut, je suis Mihet le pigeon ! Quelle chance tu as d’avoir pu t’échapper ! De nos jours, les chats comme toi ne font pas long feu. Les chats ont découvert leur pouvoir caché ! Désormais, ils n’ont plus une mais NEUF vies, et chacune de leur mort les rend plus forts ! Vas-y, essayes de sauter! </text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>
     <DialoguePatern>
       <key>mort_par_chute</key>
       <elements>
         <DialogueElementPatern>
           <image>pigeon</image>
-          <text>Chaque mort t’offre une nouvelle compétence ! Désormais, tu es immunisé contre les dégâts de chute. A toi de gérer tes 8 vies restantes convenablement pour sauver les chats de l’extinction.</text>
+          <text>Chaque mort t’offre une nouvelle compétence ! Désormais, tu es immunisé contre les dégâts de chute. A toi de gérer tes 8 vies restantes convenablement pour sauver les chats de l’extinction en battant le boss de l'entreprise.</text>
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
