@@ -11,9 +11,9 @@ public class NoyadePassive : Interractable
     {
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (!player.IsImmune(Player.Death.noyadePassive))
+        if (val.tag =="Player" && !player.IsImmune(Player.Death.noyadePassive))
         {
             txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.noyadePassive);
             SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);

@@ -11,9 +11,9 @@ public class Voiture : Interractable
     {
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (!done)
+        if (val.tag == "Player" && !done)
         {
             player.isTalking = true;
             player.Kill(Player.Death.voiture);

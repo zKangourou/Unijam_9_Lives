@@ -30,6 +30,7 @@ public class MeurtreParBalle : Interractable
             player.isTalking = true;
             player.Kill(Player.Death.meurtreParBalle);
             player.AddPower(Player.Power.tireDesBalles);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>().canShoot = true;
             done = true;
             SoundBalles();
         }
