@@ -52,6 +52,10 @@ public class PlayerMvt : MonoBehaviour
             }
             this.gameObject.transform.position += (playerMovement + directionY) * speed * Time.deltaTime;
             posY_last_frame = this.gameObject.transform.position.y;
+            if (animateur != null)
+            {
+                animateur.SetFloat("Saut", GetComponent<Rigidbody2D>().velocity.y);
+            }
         }
     }
 
