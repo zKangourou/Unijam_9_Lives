@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
-    public enum Bruitages {CHUTE,VOITURE,PRISE,NOYADE};
+    public enum Bruitages {CHUTE,VOITURE,PRISE,NOYADE,LAZER};
     public enum Musique { };
 
     /// <summary>
@@ -41,6 +41,7 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField] AudioClip bruitageVoiture;
     [SerializeField] AudioClip bruitagePrise;
     [SerializeField] AudioClip bruitageNoyade;
+    [SerializeField] AudioClip bruitageLazer;
 
 
     /// <summary>
@@ -119,6 +120,9 @@ public class SoundManager : Singleton<SoundManager>
         originalClip = null;
         switch (name)
         {
+            case Bruitages.LAZER:
+                originalClip = bruitageLazer;
+                break;
             case Bruitages.VOITURE:
                 originalClip = bruitageVoiture;
                 break;

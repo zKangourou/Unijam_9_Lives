@@ -36,7 +36,7 @@ public class MeurtreParBalle : Interractable
     }
     private void SoundBalles()
     {
-        SoundManager.PlayBruitage(SoundManager.Bruitages.LASER);
+        SoundManager.PlayBruitage(SoundManager.Bruitages.LAZER);
         txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.meurtreParBalle);
     }
 }
