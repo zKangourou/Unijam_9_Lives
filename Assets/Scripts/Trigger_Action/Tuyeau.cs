@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Grilles : Interractable
+public class Tuyeau : Interractable
 {
     [SerializeField]
     private GameObject other;
 
     public override void Interract()
     {
-        if (player.power_list.Contains(Player.Power.hachis))
+        if (player.power_list.Contains(Player.Power.canalisation))
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = other.transform.position;
             GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
@@ -17,7 +17,7 @@ public class Grilles : Interractable
 
     void OnTriggerEnter2D()
     {
-        if (player.power_list.Contains(Player.Power.hachis))//ajouter un test de skill
+        if (player.power_list.Contains(Player.Power.canalisation))
         {
             GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
         }
