@@ -12,19 +12,38 @@ public class Tronconneuse : Interractable
     {
     }
 
-    void Update()
+    void OnTriggerEnter2D(Collider2D val)
     {
-
-    }
-
-    void OnTriggerEnter2D()
-    {
+        /*
         Debug.Log("piece sombre");
         this.gameObject.SetActive(false);
-        /*
-        txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.noyadeActive);
-        SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
-        player.Kill(Player.Death.noyadeActive);
-        player.AddPower(Player.Power.canalisation);*/
+        if (val.tag == "Player" && !done)
+        {
+            player.isTalking = true;
+            player.Kill(Player.Death.voiture);
+            player.AddPower(Player.Power.passeSousLesPortes);
+            done = true;
+            StartCoroutine(bob.Move());
+        }*/
     }
+
+    /*
+IEnumerator PrintCar()
+{
+    transform.localScale = new Vector3(0, 0, 1);
+    sprite.color = Color.white;
+    bool sound = true;
+    while (transform.localScale.x < 0.99f)
+    {
+        transform.localScale += new Vector3(0.01f, 0.01f, 0);
+        if (sound && transform.localScale.x > 0.20f)
+        {
+            SoundManager.PlayBruitage(SoundManager.Bruitages.VOITURE);
+            sound = false;
+        }
+        yield return new WaitForSeconds(0.01f);
+    }
+    transform.localScale = new Vector3(1, 1, 1);
+    txtController.StartDialogue(death_dial, TexteController.DialogueType.DIE, Player.Death.voiture);
+}*/
 }

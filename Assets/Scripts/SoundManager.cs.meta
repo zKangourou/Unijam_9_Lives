@@ -1,11 +1,19 @@
 fileFormatVersion: 2
 guid: 47ff9892e8995a94582bed1e056c0b43
-timeCreated: 1478377429
+timeCreated: 1478436933
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
+  - musiqueMusique: {instanceID: 0}
+  - bruitageChute: {instanceID: 0}
   - bruitageVoiture: {fileID: 8300000, guid: 9e8a1523c21136c4f9cb791f4b063adc, type: 3}
+  - bruitagePrise: {instanceID: 0}
+  - bruitageNoyade: {instanceID: 0}
+  - bruitageLazer: {instanceID: 0}
+  - bruitageProchePrise: {instanceID: 0}
+  - bruitageHachoir: {instanceID: 0}
+  - bruitageBoss: {fileID: 8300000, guid: 9089eaa6c2be1f5449edf6eb1641e7d8, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
