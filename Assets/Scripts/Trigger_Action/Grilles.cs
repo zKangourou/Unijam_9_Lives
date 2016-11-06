@@ -15,9 +15,9 @@ public class Grilles : Interractable
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        if (player.power_list.Contains(Player.Power.hachis))//ajouter un test de skill
+        if (val.tag == "Player" && player.power_list.Contains(Player.Power.hachis))//ajouter un test de skill
         {
             GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
         }

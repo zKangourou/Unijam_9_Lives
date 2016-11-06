@@ -18,7 +18,7 @@ public class Shoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(GetComponent<Rigidbody2D>().velocity);
-        Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMvt>().avance);
+        //Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMvt>().avance);
         if (!player.isTalking)
         {
             tir = Input.GetKeyDown(KeyCode.Alpha1);

@@ -25,10 +25,13 @@ public class PriseElectrique : Interractable
         GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().HideHelp();
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D val)
     {
-        GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
-        SoundManager.PlayBruitage(SoundManager.Bruitages.PROCHEPRISE);
+        if (val.tag == "Player")
+        {
+            GameObject.FindGameObjectWithTag("Indicator").GetComponent<IndicatorManager>().ShowHelp();
+            SoundManager.PlayBruitage(SoundManager.Bruitages.PROCHEPRISE);
+        }
     }
     void OnTriggerExit2D()
     {
