@@ -6,7 +6,10 @@ public class BossDeFin : Interractable
 {
     [SerializeField]
     TexteController txtController;
-    
+    [SerializeField]
+    EndSceneController endSceneController;
+    string txt;
+
     public override void Interract()
     {
     }
@@ -15,12 +18,15 @@ public class BossDeFin : Interractable
     {
         if (player.EndChoice())
         {
-            txtController.StartDialogue("boss_enerve", TexteController.DialogueType.NOTHING);
+            txtController.StartDialogue("boss_enerve", TexteController.DialogueType.BOSS);
+            txt = "KUKUKU THE CAT IS DEAD (FOR REAL)";
         }
         else
         {
-            txtController.StartDialogue("boss_joyeux", TexteController.DialogueType.NOTHING);
+            txtController.StartDialogue("boss_joyeux", TexteController.DialogueType.BOSS);
+            txt = "HAHAHAHAH LES CHATS REIGNERONT SUR L'UNIVERS";
         }
+        endSceneController.SetText(txt);
         //SoundManager.PlayBruitage(SoundManager.Bruitages.NOYADE);
     }
 }

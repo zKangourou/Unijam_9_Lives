@@ -6,9 +6,15 @@ public class Tronconneuse : Interractable
     [SerializeField]
     TexteController txtController;
     string death_dial = "exemple_de_cle";
+    public bool lumiere = false;
 
     public override void Interract()
     {
+    }
+
+    void Update()
+    {
+
     }
 
     void OnTriggerEnter2D()

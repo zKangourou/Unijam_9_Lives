@@ -31,6 +31,10 @@
           <image>pigeon</image>
           <text>Chaque mort t’offre une nouvelle compétence ! Désormais, tu es immunisé contre les dégâts de chute. A toi de gérer tes 8 vies restantes convenablement pour sauver les chats de l’extinction en battant le boss de l'entreprise.</text>
         </DialogueElementPatern>
+      <DialogueElementPatern>
+          <image>pigeon</image>
+          <text>Va accomplir ton destin, pour vaincre le PDG et libérer tous les chats emprisonnés !</text>
+        </DialogueElementPatern>
       </elements>
     </DialoguePatern>
     <DialoguePatern>
@@ -98,11 +102,36 @@
       <elements>
         <DialogueElementPatern>
           <image>pigeon</image>
-          <text>Ma petite fille chérie m’a raconté sa rencontre avec toi. Elle avait raison, tu es vraiment troooooop mignon ! Viens là pour que je puisse te caresser.</text>
+          <text>Salut, je suis Mihet le pigeon ! Quelle chance tu as d’avoir pu t’échapper ! De nos jours, les chats ne font pas long feu.
+</text>
+        </DialogueElementPatern>
+      <DialogueElementPatern>
+          <image>cat</image>
+          <text>Miaou ?
+</text>
+        </DialogueElementPatern>
+       <DialogueElementPatern>
+          <image>pigeon</image>
+          <text>Les chats ont découvert leur pouvoir caché ! Désormais, ils n’ont plus une mais NEUF vies, et chacune de leur mort les rend plus forts ! Vas-y, essayes de sauter! 
+</text>
         </DialogueElementPatern>
       </elements>
     </DialoguePatern>
 
+      <DialoguePatern>
+      <key>girl</key>
+      <elements>
+        <DialogueElementPatern>
+          <image>girl</image>
+          <text>Oh ! Viens par ici petit chat ! Caresse le chat.</text>
+        </DialogueElementPatern>
+        <DialogueElementPatern>
+          <image>girl</image>
+          <text>Mon papa dit que les chats sont dangereux, mais tu es tellement mignon</text>
+        </DialogueElementPatern>
+      </elements>
+    </DialoguePatern>  
+  
 
   </list>
 </DialogueListPatern>
